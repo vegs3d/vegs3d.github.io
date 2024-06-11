@@ -1,0 +1,642 @@
+
+
+<style type="text/css">
+	body {
+		font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+		font-weight:300;
+		font-size:18px;
+		margin-left: auto;
+		margin-right: auto;
+		width: 1200px;
+	}
+	
+	h1 {
+		font-size:32px;
+		font-weight:300;
+	}
+	
+	.disclaimerbox {
+		background-color: #eee;		
+		border: 1px solid #eeeeee;
+		border-radius: 10px ;
+		-moz-border-radius: 10px ;
+		-webkit-border-radius: 10px ;
+		padding: 20px;
+	}
+
+	video.header-vid {
+		height: 140px;
+		border: 1px solid black;
+		border-radius: 10px ;
+		-moz-border-radius: 10px ;
+		-webkit-border-radius: 10px ;
+	}
+	
+	img.header-img {
+		height: 140px;
+		border: 1px solid black;
+		border-radius: 10px ;
+		-moz-border-radius: 10px ;
+		-webkit-border-radius: 10px ;
+	}
+	
+	img.rounded {
+		border: 1px solid #eeeeee;
+		border-radius: 10px ;
+		-moz-border-radius: 10px ;
+		-webkit-border-radius: 10px ;
+	}
+	
+	a:link,a:visited
+	{
+		color: #1367a7;
+		text-decoration: none;
+	}
+	a:hover {
+		color: #208799;
+	}
+	
+	td.dl-link {
+		height: 160px;
+		text-align: center;
+		font-size: 22px;
+	}
+	
+	.layered-paper-big { /* modified from: http://css-tricks.com/snippets/css/layered-paper/ */
+		box-shadow:
+		0px 0px 1px 1px rgba(0,0,0,0.35), /* The top layer shadow */
+		5px 5px 0 0px #fff, /* The second layer */
+		5px 5px 1px 1px rgba(0,0,0,0.35), /* The second layer shadow */
+		10px 10px 0 0px #fff, /* The third layer */
+		10px 10px 1px 1px rgba(0,0,0,0.35), /* The third layer shadow */
+		15px 15px 0 0px #fff, /* The fourth layer */
+		15px 15px 1px 1px rgba(0,0,0,0.35), /* The fourth layer shadow */
+		20px 20px 0 0px #fff, /* The fifth layer */
+		20px 20px 1px 1px rgba(0,0,0,0.35), /* The fifth layer shadow */
+		25px 25px 0 0px #fff, /* The fifth layer */
+		25px 25px 1px 1px rgba(0,0,0,0.35); /* The fifth layer shadow */
+		margin-left: 10px;
+		margin-right: 45px;
+	}
+
+	.paper-big { /* modified from: http://css-tricks.com/snippets/css/layered-paper/ */
+		box-shadow:
+		0px 0px 1px 1px rgba(0,0,0,0.35); /* The top layer shadow */
+
+		margin-left: 10px;
+		margin-right: 45px;
+	}
+
+
+	.layered-paper { /* modified from: http://css-tricks.com/snippets/css/layered-paper/ */
+		box-shadow:
+		0px 0px 1px 1px rgba(0,0,0,0.35), /* The top layer shadow */
+		5px 5px 0 0px #fff, /* The second layer */
+		5px 5px 1px 1px rgba(0,0,0,0.35), /* The second layer shadow */
+		10px 10px 0 0px #fff, /* The third layer */
+		10px 10px 1px 1px rgba(0,0,0,0.35); /* The third layer shadow */
+		margin-top: 5px;
+		margin-left: 10px;
+		margin-right: 30px;
+		margin-bottom: 5px;
+	}
+	
+	.vert-cent {
+		position: relative;
+		top: 50%;
+		transform: translateY(-50%);
+	}
+	
+	hr
+	{
+		border: 0;
+		height: 1.5px;
+		background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1.0), rgba(0, 0, 0, 0));
+	}
+</style>
+
+<html>
+<head>
+	<title>DONeRF: Towards Real-Time Rendering of Compact Neural Radiance Fields using Depth Oracle Networks</title>
+	<meta property="og:image" content="./resources/teaser.png"/> <!-- Facebook automatically scrapes this. Go to https://developers.facebook.com/tools/debug/ if you update and want to force Facebook to rescrape. -->
+	<meta property="og:title" content="DONeRF: Towards Real-Time Rendering of Compact Neural Radiance Fields using Depth Oracle Networks" />
+	<meta property="og:description" content="The recent research explosion around implicit neural representations, such as NeRF, shows that there is immense potential for implicitly storing high-quality scene and lighting information in compact neural networks.
+However, one major limitation preventing the use of NeRF in real-time rendering applications is the prohibitive computational cost of excessive network evaluations along each view ray, requiring dozens of petaFLOPS.
+In this work, we bring compact neural representations closer to practical rendering of synthetic content in real-time applications, such as games and virtual reality.
+We show that the number of samples required for each view ray can be significantly reduced when samples are placed around surfaces in the scene without compromising image quality.
+To this end, we propose a depth oracle network that predicts ray sample locations for each view ray with a single network evaluation.
+We show that using a classification network around logarithmically discretized and spherically warped depth values is essential to encode surface locations rather than directly estimating depth.
+The combination of these techniques leads to DONeRF, our compact dual network design with a depth oracle network as its first step and a locally sampled shading network for ray accumulation.
+With DONeRF, we reduce the inference costs by up to 48x compared to NeRF when conditioning on available ground truth depth information.
+Compared to concurrent acceleration methods for raymarching-based neural representations, DONeRF does not require additional memory for explicit caching or acceleration structures, and can render interactively (20 frames per second) on a single GPU." />
+
+  
+  <link rel="stylesheet" href="./definitive-image-comparison-slider-master/src/dics.css">
+  <script src="./definitive-image-comparison-slider-master/src/dics.js"></script>
+
+  
+	<script>
+    document.addEventListener('DOMContentLoaded', domReady);
+    
+    function domReady() {
+    
+      var b = document.querySelectorAll('.b-dics');
+      b.forEach(element => 
+        new Dics({
+          container: element,
+          textPosition: 'top'
+        })
+      );
+
+    }
+  
+    
+
+    
+	</script>
+  
+</head>
+
+<body>
+	<br>
+	<center>
+
+		<table align=center width=1200px>
+			<table align=center width=1200px>
+				<tr>
+					<td align=center width=300px>
+						<center>
+							<span style="font-size:36px">DONeRF: Towards Real-Time Rendering of Compact Neural Radiance Fields using Depth Oracle Networks</span>
+						</center>
+					</td>
+				</tr>
+        <tr>
+          <td align=center width=300px>
+						<center>
+							<span style="font-size:24px">Computer Graphics Forum (EGSR 2021)</span>
+						</center>
+					</td>
+        </tr>
+			</table>
+		</table>
+		
+		<br>
+		
+		<table align=center width=1200px>
+			<table align=center width=1200px>
+				<tr>
+					<td align=center width=300px>
+						<center>
+							<span style="font-size:24px"><a href="https://thomasneff.github.io/">Thomas Neff</a></span>
+							<br>
+							<span style="font-size:14px">Graz University of Technology</span>
+						</center>
+					</td>
+					<td align=center width=300px>
+						<center>
+							<span style="font-size:24px"><a href="https://github.com/pastad">Pascal Stadlbauer</a></span>
+							<br>
+							<span style="font-size:14px">Graz University of Technology</span>
+						</center>
+					</td>
+					<td align=center width=300px>
+						<center>
+							<span style="font-size:24px"><a href="https://scholar.google.com/citations?user=Q92iAWEAAAAJ">Mathias Parger</a></span>
+							<br>
+							<span style="font-size:14px">Graz University of Technology</span>
+						</center>
+					</td>
+					<td align=center width=300px>
+						<center>
+							<span style="font-size:24px"><a href="https://online.tugraz.at/tug_online/visitenkarte.show_vcard?pPersonenGruppe=3&pPersonenId=D715516087483BD3">Andreas Kurz</a></span>
+							<br>
+							<span style="font-size:14px">Graz University of Technology</span>
+						</center>
+					</td>
+				</tr>
+			</table>
+			<br>
+			<table align=center width=1200px>
+				<tr>
+					<td align=center width=300px>
+						<center>
+							<span style="font-size:24px"><a href="https://scholar.google.at/citations?user=tfPFpkoAAAAJ&hl=de">Joerg H. Mueller</a></span>
+							<br>
+							<span style="font-size:14px">Graz University of Technology</span>
+						</center>
+					</td>
+					<td align=center width=300px>
+						<center>
+							<span style="font-size:24px"><a href="mailto:chakravarty.alla@gmail.com">Chakravarty R. Alla Chaitanya</a></span>
+							<br>
+							<span style="font-size:14px">Facebook Reality Labs</span>
+						</center>
+					</td>
+					<td align=center width=300px>
+						<center>
+							<span style="font-size:24px"><a href="http://kaplanyan.com/">Anton Kaplanyan</a></span>
+							<br>
+							<span style="font-size:14px">Facebook Reality Labs</span>
+						</center>
+					</td>
+					<td align=center width=300px>
+						<center>
+							<span style="font-size:24px"><a href="https://www.markussteinberger.net/">Markus Steinberger</a></span>
+							<br>
+							<span style="font-size:14px">Graz University of Technology</span>
+						</center>
+					</td>
+				</tr>
+			</table>
+		</table>
+	</center>
+
+	<br>
+	<hr>
+	<center>
+		<table>
+		  <tr>
+      <td align=center> <span style="font-size:18pt">
+			  <center>
+				<a href="https://diglib.eg.org/handle/10.1111/cgf14340">[Paper on CGF]</a>
+			  </center>
+			</td>
+			<td align=center> <span style="font-size:18pt">
+			  <center>
+				<a href="https://arxiv.org/abs/2103.03231">[ArXiv]</a>
+			  </center>
+			</td>
+			<td align=center> <span style="font-size:18pt">
+			  <center>
+				<a href="https://youtu.be/u9HqKGqvJhQ?t=5843">[EGSR Presentation (at 1:37:23)]</a>
+			  </center>
+			</td>
+			<td align=center> <span style="font-size:18pt">
+			  <center>
+				<a href="https://files.icg.tugraz.at/f/17d608b19ac445b48c1e/?dl=1">[EGSR Slides]</a>
+			  </center>
+			</td>
+      <td align=center> <span style="font-size:18pt">
+			  <center>
+				<a href="https://github.com/facebookresearch/DONERF">[Code, Datasets]</a>
+			  </center>
+			</td>
+	      <td align=center> <span style="font-size:18pt">
+			  <center>
+				<a href="https://www.youtube.com/watch?v=9L5NqNDZHjk">[Two Minute Papers]</a>
+			  </center>
+			</td>
+		  </tr>
+		</table>
+	</center>
+
+	<hr>
+
+	<center>
+		<table align=center width=1200px>
+			<tr>
+				<td width=1200px>
+					<center>
+						<img style="width:1207px" src="./resources/teaser.png"/>
+					</center>
+				</td>
+			</tr>
+		</table>
+	</center>
+	<center>
+		<table align=center width=1200px>
+			<tr>
+				<td width=400px>
+					<center>
+						<video controls autoplay muted loop>
+							<source src="./resources/videos/sanmiguel_donerf16_rotate_1.mp4" type="video/mp4">
+							Your browser does not support the video tag.
+						  </video>
+					</center>
+				</td>
+				<td width=400px>
+					<center>
+						<video controls autoplay muted loop>
+							<source src="./resources/videos/classroom_donerf16_pan_1.mp4" type="video/mp4">
+							Your browser does not support the video tag.
+						  </video>
+					</center>
+				</td>
+				<td width=400px>
+					<center>
+						<video controls autoplay muted loop>
+							<source src="./resources/videos/pavillon_donerf16_rotate_1.mp4" type="video/mp4">
+							Your browser does not support the video tag.
+						  </video>
+					</center>
+				</td>
+			</tr>
+		</table>
+	</center>
+
+	<hr>
+
+
+
+	<table align=center width=1200px>
+		<center><h1>Abstract & Method</h1></center>
+		<tr>
+			<td>
+				The recent research explosion around Neural Radiance Fields (NeRFs) shows that there is immense potential for implicitly storing scene and lighting information in neural networks, e.g., for novel view generation. However, one major limitation preventing the widespread use of NeRFs is the prohibitive computational cost of excessive network evaluations along each view ray, requiring dozens of petaFLOPS when aiming for real-time rendering on current devices. We show that the number of samples required for each view ray can be significantly reduced when local samples are placed around surfaces in the scene.
+	To this end, we propose a depth oracle network, which predicts ray sample locations for each view ray with a single network evaluation.
+	We show that using a classification network around logarithmically discretized and spherically warped depth values is essential to encode surface locations rather than directly estimating depth. The combination of these techniques leads to DONeRF, a dual network design with a depth oracle network as a first step and a locally sampled shading network for ray accumulation.
+	With our design, we reduce the inference costs by up to 48x compared to NeRF.
+	Using an off-the-shelf inference API in combination with simple compute kernels, we are the first to render raymarching-based neural representations at interactive frame rates (15 frames per second at 800x800) on a single GPU.
+	At the same time, since we focus on the important parts of the scene around surfaces, we achieve equal or better quality compared to NeRF.
+			</td>
+		</tr>
+	</table>
+	<br>
+	<table align=center width=1200px>
+		<tr>
+			<td align=center width=1200px>
+				<center>
+					<td><img class="round" style="width:1200px" src="./resources/pipelinev2.svg"/></td>
+				</center>
+			</td>
+		</tr>
+	</table>
+	<br>
+	<hr>
+	<table align=center width=1200px>
+		<center><h1>Real-Time View Synthesis</h1></center>
+		<tr>
+			<td>
+				Due to our novel depth oracle sampling scheme, DONeRF achieves quality similar to <a href="https://www.matthewtancik.com/nerf">NeRF</a>, which uses a total of 256 samples.
+				At only 4 samples (comparison to NeRF below), DONeRF achieves a speedup of 20x-48x at the same quality. 
+        Click / Drag the Sliders to compare various outputs between DONeRF, NeRF and Ground Truth Blender renderings.
+			</td>
+		</tr>
+	</table>
+	<br>
+  
+  <br>
+	<table align=center width=1200px>
+		<tr>
+			<td align=center width=400px>
+				<center>
+					<td>
+            <div class="b-dics" style="width: 400px">
+              <!-- 44 -->
+              <img src="./resources/sanmiguel_donerf4.png" width=400px  alt="DONeRF">
+              <img src="./resources/sanmiguel_gt.png" width=400px  alt="Target">
+              <img src="./resources/sanmiguel_nerf.png" width=400px  alt="NeRF">
+            </div>
+					</td>
+				</center>
+			</td>
+			<td align=center width=400px>
+				<center>
+					<td>
+						<div class="b-dics" style="width: 400px">
+              <!-- 39 -->
+              <img src="./resources/classroom_donerf4.png" width=400px  alt="DONeRF">
+              <img src="./resources/classroom_gt.png" width=400px  alt="Target">
+              <img src="./resources/classroom_nerf.png" width=400px  alt="NeRF">
+            </div>
+						</div>
+					</td>
+				</center>
+			</td>
+			<td align=center width=400px>
+				<center>
+					<td>
+						<div class="b-dics" style="width: 400px">
+              <!-- 57 -->
+              <img src="./resources/forest_donerf4.png" width=400px  alt="DONeRF">
+              <img src="./resources/forest_gt.png" width=400px  alt="Target">
+              <img src="./resources/forest_nerf.png" width=400px  alt="NeRF">
+            </div>
+					</td>
+				</center>
+			</td>
+		</tr>
+	</table>
+  <br>
+  <hr>
+
+  <table align=center width=1200px>
+	<center><h1>Depth Oracle Predicition</h1></center>
+	<tr>
+		<td>
+			Our Depth Oracle predicts multiple potential sampling candidates along each ray by discretizing the space along rays and predicting sampling probabilities along rays.
+			The 3 color channels encode the 3 highest probabilities along the ray - gray values illustrate that there is likely only a single surface that should be sampled, while colorful values indicate that samples need to be spread out in depth.
+			Even a relatively coarse depth prediction is sufficient for DONeRF to place samples efficiently.
+		</td>
+	</tr>
+</table>
+<br>
+
+  <table align=center width=1200px>
+	
+	<tr>
+		<td align=center width=400px>
+			<center>
+				<td>
+		<div class="b-dics" style="width: 400px">
+		  <!-- 44 -->
+		  <img src="./resources/sanmiguel_depth_donerf.png" width=400px  alt="DONeRF">
+		  <img src="./resources/sanmiguel_depth_target.png" width=400px  alt="Target">
+		</div>
+				</td>
+			</center>
+		</td>
+		<td align=center width=400px>
+			<center>
+				<td>
+					<div class="b-dics" style="width: 400px">
+		  <!-- 39 -->
+		  <img src="./resources/classroom_depth_donerf.png" width=400px  alt="DONeRF">
+		  <img src="./resources/classroom_depth_target.png" width=400px  alt="Target">
+		</div>
+					</div>
+				</td>
+			</center>
+		</td>
+		<td align=center width=400px>
+			<center>
+				<td>
+					<div class="b-dics" style="width: 400px">
+		  <!-- 57 -->
+		  <img src="./resources/forest_depth_donerf.png" width=400px  alt="DONeRF">
+		  <img src="./resources/forest_depth_target.png" width=400px  alt="Target">
+		</div>
+				</td>
+			</center>
+		</td>
+	</tr>
+</table>
+<br>
+
+<hr>
+
+<table align=center width=1200px>
+	<center><h1><a href="https://research.nvidia.com/publication/2020-07_FLIP">FLIP</a> Comparison</h1></center>
+	<tr>
+		<td>
+			We use the <a href="https://research.nvidia.com/publication/2020-07_FLIP">FLIP</a> error estimator to produce error maps that model how likely humans would perceive errors when "flipping" between an image and the target output. 
+			DONeRF shows similar or better results at significantly lower performance requirements.
+		</td>
+	</tr>
+</table>
+<br>
+
+<table align=center width=1200px>
+	<tr>
+		<td align=center width=400px>
+			<center>
+				<td>
+		<div class="b-dics" style="width: 400px">
+		  <!-- 44 -->
+		  <img src="./resources/sanmiguel_donerf_flip.png" width=400px  alt="DONeRF">
+		  <img src="./resources/sanmiguel_nerf_flip.png" width=400px  alt="NeRF">
+		</div>
+				</td>
+			</center>
+		</td>
+		<td align=center width=400px>
+			<center>
+				<td>
+					<div class="b-dics" style="width: 400px">
+		  <!-- 39 -->
+		  <img src="./resources/classroom_donerf_flip.png" width=400px  alt="DONeRF">
+		  <img src="./resources/classroom_nerf_flip.png" width=400px  alt="NeRF">
+		</div>
+					</div>
+				</td>
+			</center>
+		</td>
+		<td align=center width=400px>
+			<center>
+				<td>
+					<div class="b-dics" style="width: 400px">
+		  <!-- 57 -->
+		  <img src="./resources/forest_donerf_flip.png" width=400px  alt="DONeRF">
+		  <img src="./resources/forest_nerf_flip.png" width=400px  alt="NeRF">
+		</div>
+				</td>
+			</center>
+		</td>
+	</tr>
+</table>
+
+<br>
+<hr>
+<table align=center width=1200px>
+	<center><h1>Video Summary</h1></center>
+	<tr>
+		<td>
+			<iframe width="1200" height="675" src="https://www.youtube.com/embed/6UE1dMUjN_E" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+		</td>
+	</tr>
+</table>
+
+<!--	
+	<table align=center width=1200px>
+		<br>
+		<tr>
+			<center>
+				<span style="font-size:28px"><a href=''>[Slides]</a>
+				</span>
+			</center>
+		</tr>
+	</table>
+
+	<hr>
+
+	<center><h1>Code</h1></center>
+
+	<table align=center width=420px>
+		<center>
+			<tr>
+				<td>
+				</td>
+			</tr>
+		</center>
+	</table>
+	<table align=center width=400px>
+		<tr>
+			<td align=center width=400px>
+				<center>
+					<td><img class="round" style="width:450px" src="./resources/method_diagram.png"/></td>
+				</center>
+			</td>
+		</tr>
+	</table>
+	<table align=center width=1200px>
+		<center>
+			<tr>
+				<td>
+					Short description if wanted
+				</td>
+			</tr>
+		</center>
+	</table>
+	
+	<table align=center width=1200px>
+		<br>
+		<tr><center>
+			<span style="font-size:28px">&nbsp;<a href='https://github.com/richzhang/webpage-template'>[GitHub]</a>
+			</center>
+		</span>
+	</table>
+	-->
+	<br>
+	<hr>
+	<table align=center width=450px>
+		<center><h1>Paper and Supplementary Material</h1></center>
+		<tr>
+			<td><a href="https://diglib.eg.org/handle/10.1111/cgf14340"><img class="layered-paper-big" style="height:175px" src="./resources/paper.png"/></a></td>
+			<td><span style="font-size:14pt">T. Neff, P. Stadlbauer, M. Parger, A. Kurz, J. H. Mueller, C. R. A. Chaitanya, A. Kaplanyan, M. Steinberger<br>
+				<b>DONeRF: Towards Real-Time Rendering of Compact Neural Radiance Fields using Depth Oracle Networks</b><br>				
+				(published in <a href="https://diglib.eg.org/handle/10.1111/cgf14340">Computer Graphics Forum (EGSR 2021)</a>)<br>
+				<!-- (<a href="./resources/camera-ready.pdf">camera ready</a>)<br> -->
+				<span style="font-size:4pt"><a href=""><br></a>
+				</span>
+			</td>
+		</tr>
+	</table>
+	<br>
+  
+<!--
+  <img-comparison-slider>
+    <img slot="before" src="./resources/method_diagram.png" />
+    <img slot="after" src="./resources/teaser.png" />
+  </img-comparison-slider>
+-->
+	<table align=center width=600px>
+		<tr>
+			<td><span style="font-size:14pt"><center>
+				<a href="./resources/bibtex.txt">[Bibtex]</a>
+			</center></td>
+		</tr>
+	</table>
+
+
+
+	<hr>
+	<br>
+
+	
+
+
+	<table align=center width=900px>
+		<tr>
+			<td width=400px>
+				<left>
+					<center><h1>Acknowledgements</h1></center>
+					This template was originally made by <a href="http://web.mit.edu/phillipi/">Phillip Isola</a> and <a href="http://richzhang.github.io/">Richard Zhang</a> for a <a href="http://richzhang.github.io/colorization/">colorful</a> ECCV project; the code can be found <a href="https://github.com/richzhang/webpage-template">here</a>.
+				</left>
+			</td>
+		</tr>
+	</table>
+
+<br>
+</body>
+</html>
+
