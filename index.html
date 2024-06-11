@@ -119,16 +119,14 @@
 <head>
 	<title>DONeRF: Towards Real-Time Rendering of Compact Neural Radiance Fields using Depth Oracle Networks</title>
 	<meta property="og:image" content="./resources/teaser.png"/> <!-- Facebook automatically scrapes this. Go to https://developers.facebook.com/tools/debug/ if you update and want to force Facebook to rescrape. -->
-	<meta property="og:title" content="DONeRF: Towards Real-Time Rendering of Compact Neural Radiance Fields using Depth Oracle Networks" />
-	<meta property="og:description" content="The recent research explosion around implicit neural representations, such as NeRF, shows that there is immense potential for implicitly storing high-quality scene and lighting information in compact neural networks.
-However, one major limitation preventing the use of NeRF in real-time rendering applications is the prohibitive computational cost of excessive network evaluations along each view ray, requiring dozens of petaFLOPS.
-In this work, we bring compact neural representations closer to practical rendering of synthetic content in real-time applications, such as games and virtual reality.
-We show that the number of samples required for each view ray can be significantly reduced when samples are placed around surfaces in the scene without compromising image quality.
-To this end, we propose a depth oracle network that predicts ray sample locations for each view ray with a single network evaluation.
-We show that using a classification network around logarithmically discretized and spherically warped depth values is essential to encode surface locations rather than directly estimating depth.
-The combination of these techniques leads to DONeRF, our compact dual network design with a depth oracle network as its first step and a locally sampled shading network for ray accumulation.
-With DONeRF, we reduce the inference costs by up to 48x compared to NeRF when conditioning on available ground truth depth information.
-Compared to concurrent acceleration methods for raymarching-based neural representations, DONeRF does not require additional memory for explicit caching or acceleration structures, and can render interactively (20 frames per second) on a single GPU." />
+	<meta property="og:title" content="VEGS: View Extrapolation of Urban Scenes in 3D Gaussian Splatting using Learned Priors" />
+	<meta property="og:description" content="Neural rendering-based urban scene reconstruction methods commonly rely on images collected from driving vehicles with cameras facing and moving forward. 
+											 Although these methods can successfully synthesize from views similar to training camera trajectory, directing the novel view outside the training camera distribution does not guarantee on-par performance. 
+											 In this paper, we tackle the Extrapolated View Synthesis (EVS) problem by evaluating the reconstructions on views such as looking left, right or downwards with respect to training camera distributions. 
+											 To improve rendering quality for EVS, we initialize our model by constructing dense LiDAR map, and propose to leverage prior scene knowledge such as surface normal estimator and large-scale diffusion model. 
+											 Qualitative and quantitative comparisons demonstrate the effectiveness of our methods on EVS. 
+											 To the best of our knowledge, we are the first to address the EVS problem in urban scene reconstruction.
+" />
 
   
   <link rel="stylesheet" href="./definitive-image-comparison-slider-master/src/dics.css">
@@ -166,14 +164,14 @@ Compared to concurrent acceleration methods for raymarching-based neural represe
 				<tr>
 					<td align=center width=300px>
 						<center>
-							<span style="font-size:36px">DONeRF: Towards Real-Time Rendering of Compact Neural Radiance Fields using Depth Oracle Networks</span>
+							<span style="font-size:36px">VEGS: View Extrapolation of Urban Scenes in 3D Gaussian Splatting using Learned Priors</span>
 						</center>
 					</td>
 				</tr>
         <tr>
           <td align=center width=300px>
 						<center>
-							<span style="font-size:24px">Computer Graphics Forum (EGSR 2021)</span>
+							<span style="font-size:24px">ECCV 24</span>
 						</center>
 					</td>
         </tr>
@@ -187,30 +185,23 @@ Compared to concurrent acceleration methods for raymarching-based neural represe
 				<tr>
 					<td align=center width=300px>
 						<center>
-							<span style="font-size:24px"><a href="https://thomasneff.github.io/">Thomas Neff</a></span>
+							<span style="font-size:24px"><a href="https://deepshwang.github.io/">Sungwon Hwang*</a></span>
 							<br>
-							<span style="font-size:14px">Graz University of Technology</span>
+							<span style="font-size:14px">Korea Advanced Institute of Science and Technology</span>
 						</center>
 					</td>
 					<td align=center width=300px>
 						<center>
-							<span style="font-size:24px"><a href="https://github.com/pastad">Pascal Stadlbauer</a></span>
+							<span style="font-size:24px"><a href="https://vegs3d.github.io">Min-Jung Kimg*</a></span>
 							<br>
-							<span style="font-size:14px">Graz University of Technology</span>
+							<span style="font-size:14px">Korea Advanced Institute of Science and Technology</span>
 						</center>
 					</td>
 					<td align=center width=300px>
 						<center>
-							<span style="font-size:24px"><a href="https://scholar.google.com/citations?user=Q92iAWEAAAAJ">Mathias Parger</a></span>
+							<span style="font-size:24px"><a href="https://keh0t0.github.io/">Taewoong Kang</a></span>
 							<br>
-							<span style="font-size:14px">Graz University of Technology</span>
-						</center>
-					</td>
-					<td align=center width=300px>
-						<center>
-							<span style="font-size:24px"><a href="https://online.tugraz.at/tug_online/visitenkarte.show_vcard?pPersonenGruppe=3&pPersonenId=D715516087483BD3">Andreas Kurz</a></span>
-							<br>
-							<span style="font-size:14px">Graz University of Technology</span>
+							<span style="font-size:14px">Korea Advanced Institute of Science and Technology</span>
 						</center>
 					</td>
 				</tr>
@@ -220,30 +211,16 @@ Compared to concurrent acceleration methods for raymarching-based neural represe
 				<tr>
 					<td align=center width=300px>
 						<center>
-							<span style="font-size:24px"><a href="https://scholar.google.at/citations?user=tfPFpkoAAAAJ&hl=de">Joerg H. Mueller</a></span>
+							<span style="font-size:24px"><a href="https://vegs3d.github.io">Jayeon Kang</a></span>
 							<br>
-							<span style="font-size:14px">Graz University of Technology</span>
+							<span style="font-size:14px">Ghent University</span>
 						</center>
 					</td>
 					<td align=center width=300px>
 						<center>
-							<span style="font-size:24px"><a href="mailto:chakravarty.alla@gmail.com">Chakravarty R. Alla Chaitanya</a></span>
+							<span style="font-size:24px"><a href="https://sites.google.com/site/jaegulchoo">Jaegul Choo</a></span>
 							<br>
-							<span style="font-size:14px">Facebook Reality Labs</span>
-						</center>
-					</td>
-					<td align=center width=300px>
-						<center>
-							<span style="font-size:24px"><a href="http://kaplanyan.com/">Anton Kaplanyan</a></span>
-							<br>
-							<span style="font-size:14px">Facebook Reality Labs</span>
-						</center>
-					</td>
-					<td align=center width=300px>
-						<center>
-							<span style="font-size:24px"><a href="https://www.markussteinberger.net/">Markus Steinberger</a></span>
-							<br>
-							<span style="font-size:14px">Graz University of Technology</span>
+							<span style="font-size:14px">Korea Advanced Institute of Science and Technology</span>
 						</center>
 					</td>
 				</tr>
@@ -256,34 +233,14 @@ Compared to concurrent acceleration methods for raymarching-based neural represe
 	<center>
 		<table>
 		  <tr>
-      <td align=center> <span style="font-size:18pt">
+			<td align=center> <span style="font-size:18pt">
 			  <center>
-				<a href="https://diglib.eg.org/handle/10.1111/cgf14340">[Paper on CGF]</a>
+				<a href="https://arxiv.org/abs/2103.03231">|  ArXiv  |</a>
 			  </center>
 			</td>
 			<td align=center> <span style="font-size:18pt">
 			  <center>
-				<a href="https://arxiv.org/abs/2103.03231">[ArXiv]</a>
-			  </center>
-			</td>
-			<td align=center> <span style="font-size:18pt">
-			  <center>
-				<a href="https://youtu.be/u9HqKGqvJhQ?t=5843">[EGSR Presentation (at 1:37:23)]</a>
-			  </center>
-			</td>
-			<td align=center> <span style="font-size:18pt">
-			  <center>
-				<a href="https://files.icg.tugraz.at/f/17d608b19ac445b48c1e/?dl=1">[EGSR Slides]</a>
-			  </center>
-			</td>
-      <td align=center> <span style="font-size:18pt">
-			  <center>
-				<a href="https://github.com/facebookresearch/DONERF">[Code, Datasets]</a>
-			  </center>
-			</td>
-	      <td align=center> <span style="font-size:18pt">
-			  <center>
-				<a href="https://www.youtube.com/watch?v=9L5NqNDZHjk">[Two Minute Papers]</a>
+				<a href="https://youtu.be/u9HqKGqvJhQ?t=5843">|  Code  |</a>
 			  </center>
 			</td>
 		  </tr>
@@ -297,13 +254,17 @@ Compared to concurrent acceleration methods for raymarching-based neural represe
 			<tr>
 				<td width=1200px>
 					<center>
-						<img style="width:1207px" src="./resources/teaser.png"/>
+						<video controls autoplay muted loop>
+							<source src="./resources/videos/final_evs_demo_v3.mp4" type="video/mp4">
+							Your browser does not support the video tag.
+						  </video>
 					</center>
+
 				</td>
 			</tr>
 		</table>
 	</center>
-	<center>
+	<!-- <center>
 		<table align=center width=1200px>
 			<tr>
 				<td width=400px>
@@ -332,7 +293,7 @@ Compared to concurrent acceleration methods for raymarching-based neural represe
 				</td>
 			</tr>
 		</table>
-	</center>
+	</center> -->
 
 	<hr>
 
