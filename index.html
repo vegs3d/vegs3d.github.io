@@ -99,7 +99,7 @@
 		margin-right: 30px;
 		margin-bottom: 5px;
 	}
-	
+
 	.vert-cent {
 		position: relative;
 		top: 50%;
@@ -112,12 +112,24 @@
 		height: 1.5px;
 		background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1.0), rgba(0, 0, 0, 0));
 	}
+
+	.icon 
+	{
+		display: inline-block;
+		width: 10px; /* Adjust as needed */
+		height: 10px; /* Adjust as needed */
+		background-image: url('./resources/vegs_icon.svg');
+		background-size: contain; /* Ensure the SVG fits within the span */
+		background-repeat: no-repeat; /* Prevent tiling */
+		vertical-align: middle; /* Align with the text */
+	}
+
 </style>
 
 <html>
 <head>
-	<title>VEGS: View Extrapolation of Urban Scenes in 3D Gaussian Splatting using Learned Priors</title>
-	<meta property="og:image" content="./resources/teaser.png"/> <!-- Facebook automatically scrapes this. Go to https://developers.facebook.com/tools/debug/ if you update and want to force Facebook to rescrape. -->
+	<title> VEGS: View Extrapolation of Urban Scenes in 3D Gaussian Splatting using Learned Priors</title>
+	<meta property="og:image" content="./resources/vegs_icon.png"/> <!-- Facebook automatically scrapes this. Go to https://developers.facebook.com/tools/debug/ if you update and want to force Facebook to rescrape. -->
 	<meta property="og:title" content="VEGS: View Extrapolation of Urban Scenes in 3D Gaussian Splatting using Learned Priors" />
 	<meta property="og:description" content="Neural rendering-based urban scene reconstruction methods commonly rely on images collected from driving vehicles with cameras facing and moving forward. 
 											 Although these methods can successfully synthesize from views similar to training camera trajectory, directing the novel view outside the training camera distribution does not guarantee on-par performance. 
@@ -163,7 +175,8 @@
 				<tr>
 					<td align=center width=300px>
 						<center>
-							<span style="font-size:36px">VEGS: View Extrapolation of Urban Scenes in 3D Gaussian Splatting using Learned Priors</span>
+							<span class="icon"></span> <!-- Add this line to include the icon -->
+							<span style="font-size:36px"> VEGS: View Extrapolation of Urban Scenes in 3D Gaussian Splatting using Learned Priors</span>
 						</center>
 					</td>
 				</tr>
@@ -268,7 +281,7 @@
 			<tr>
 				<td>
 					<center>
-					<span style="font-size:16px"><b>Our method aligns and flattens Gaussian covariances to scene surfaces estimated from monocular normal prediction network</b></span>
+					<span style="font-size:16px">Our method aligns and flattens Gaussian covariances to scene surfaces estimated from monocular normal prediction network</span>
 					</center>
 				</td>
 			</tr>
@@ -340,17 +353,17 @@
 				</td>
 			</tr>
 		</table>
+	</center>
 
+	<center>
 		<table align=center width=1200px>
 			<tr>
-				<td>
-					<span style="font-size:15px"><b>Our method jointly reconstructs static scene with dynamic object such as cars.</b></span>
+				<td align=center width=1200px>
+					<span style="font-size:16px">Our method jointly reconstructs static scene with dynamic object such as cars.</span>
 				</td>
 			</tr>
 		</table>
-
-	</center>	
-
+	</center>
 	<!-- <center>
 		<table align=center width=1200px>
 			<tr>
@@ -388,6 +401,13 @@
 
 	<table align=center width=1200px>
 		<center><h1>Pipeline</h1></center>
+		<!-- <tr>
+			<td align=center width=1200px>
+				Our dynamic scene model integrates camera, LiDAR, and a standard bounding box estimator, leveraging 3D Gaussian Splatting \cite{kerbl20233d} to construct a static and multiple instance-wise Gaussian models (\cref{subsec:lidar}).
+In addition, we learned that optimizing Gaussian models with forward-facing cameras causes the covariance shapes of Gaussians to over-fit to a certain view, making the model unsuitable for EVS. For that, we propose to guide covariance orientation and shape using surface normal priors, introducing a new covariance renderer and supervision method with surface normal maps extracted from training images (\cref{subsec:normal}).
+Finally, we propose a method for directly supervising extrapolated views by distilling knowledge from a large-scale diffusion model, which we fine-tune a subset of parameters to balance between scene-specific knowledge and generalization to unseen views (\cref{subsec:diffusion}). We summarize our method in Fig. \ref{fig:pipeline}.
+			</td>
+		</tr> -->
 		<tr>
 			<td align=center width=1200px>
 				<center>
