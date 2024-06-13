@@ -116,9 +116,9 @@
 	.icon 
 	{
 		display: inline-block;
-		width: 10px; /* Adjust as needed */
-		height: 10px; /* Adjust as needed */
-		background-image: url('./resources/vegs_icon.svg');
+		width: 36px; /* Adjust as needed */
+		height: 36px; /* Adjust as needed */
+		background-image: url('./resources/vegs_icon_small.png');
 		background-size: contain; /* Ensure the SVG fits within the span */
 		background-repeat: no-repeat; /* Prevent tiling */
 		vertical-align: middle; /* Align with the text */
@@ -138,6 +138,9 @@
 											 Qualitative and quantitative comparisons demonstrate the effectiveness of our methods on EVS. 
 											 To the best of our knowledge, we are the first to address the EVS problem in urban scene reconstruction.
 " />
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
   
   <link rel="stylesheet" href="./definitive-image-comparison-slider-master/src/dics.css">
@@ -176,7 +179,7 @@
 					<td align=center width=300px>
 						<center>
 							<span class="icon"></span> <!-- Add this line to include the icon -->
-							<span style="font-size:36px"> VEGS: View Extrapolation of Urban Scenes in 3D Gaussian Splatting using Learned Priors</span>
+							<span style="font-size:36px"> VEGS : View Extrapolation of Urban Scenes in 3D Gaussian Splatting using Learned Priors</span>
 						</center>
 					</td>
 				</tr>
@@ -281,7 +284,7 @@
 			<tr>
 				<td>
 					<center>
-					<span style="font-size:16px">Our method aligns and flattens Gaussian covariances to scene surfaces estimated from monocular normal prediction network</span>
+					<span style="font-size:16px"><b>VEGS</b> aligns and flattens Gaussian covariances to scene surfaces estimated from monocular normal prediction network</span>
 					</center>
 				</td>
 			</tr>
@@ -359,7 +362,7 @@
 		<table align=center width=1200px>
 			<tr>
 				<td align=center width=1200px>
-					<span style="font-size:16px">Our method jointly reconstructs static scene with dynamic object such as cars.</span>
+					<span style="font-size:16px">Our method jointly reconstructs static scene with dynamic objects such as cars.</span>
 				</td>
 			</tr>
 		</table>
@@ -401,13 +404,23 @@
 
 	<table align=center width=1200px>
 		<center><h1>Pipeline</h1></center>
-		<!-- <tr>
-			<td align=center width=1200px>
-				Our dynamic scene model integrates camera, LiDAR, and a standard bounding box estimator, leveraging 3D Gaussian Splatting \cite{kerbl20233d} to construct a static and multiple instance-wise Gaussian models (\cref{subsec:lidar}).
-In addition, we learned that optimizing Gaussian models with forward-facing cameras causes the covariance shapes of Gaussians to over-fit to a certain view, making the model unsuitable for EVS. For that, we propose to guide covariance orientation and shape using surface normal priors, introducing a new covariance renderer and supervision method with surface normal maps extracted from training images (\cref{subsec:normal}).
-Finally, we propose a method for directly supervising extrapolated views by distilling knowledge from a large-scale diffusion model, which we fine-tune a subset of parameters to balance between scene-specific knowledge and generalization to unseen views (\cref{subsec:diffusion}). We summarize our method in Fig. \ref{fig:pipeline}.
+		<tr>
+			<td align=center>
+				Our dynamic scene model integrates <b>camera</b> and <b>LiDAR</b> to construct a static and multiple instance-wise dynamic models based on <a href="https://repo-sam.inria.fr/fungraph/3d-gaussian-splatting/">3D Gaussian Splatting</a>.
+				<br>
+				We design our reconstruction method suitable for <b>Extrapolated View Synthesis (EVS)</b> by evaluating the reconstructions on views  looking left, right or downwards with respect to training camera distributions.
+				<br> <br>
+				<!-- <br> <br>
+In addition, we learned that optimizing Gaussian models with forward-facing cameras causes the covariance shapes of Gaussians to over-fit to a certain view, making the model unsuitable for EVS. 
+<br> <br>
+For that, we propose to guide covariance orientation and shape using surface normal priors, introducing a new covariance renderer and supervision method with surface normal maps extracted from training images.
+<br> <br>
+Finally, we propose a method for directly supervising extrapolated views by distilling knowledge from a large-scale diffusion model, which we fine-tune a subset of parameters to balance between scene-specific knowledge and generalization to unseen views. -->
 			</td>
-		</tr> -->
+		</tr>
+	</table>
+
+	<table align=center width=1200px>
 		<tr>
 			<td align=center width=1200px>
 				<center>
@@ -476,12 +489,12 @@ Finally, we propose a method for directly supervising extrapolated views by dist
   <hr>
 
   <table align=center width=1200px>
-	<center><h1>Depth Oracle Predicition</h1></center>
+	<center><h1>Score Distillation from Large-scale Diffusion Model</h1></center>
 	<tr>
 		<td>
 			Our Depth Oracle predicts multiple potential sampling candidates along each ray by discretizing the space along rays and predicting sampling probabilities along rays.
 			The 3 color channels encode the 3 highest probabilities along the ray - gray values illustrate that there is likely only a single surface that should be sampled, while colorful values indicate that samples need to be spread out in depth.
-			Even a relatively coarse depth prediction is sufficient for DONeRF to place samples efficiently.
+			Even a relatively coarse depth prediction is sufficient for DONeRF to place samples efficiently. \( \mathcal{L}\)
 		</td>
 	</tr>
 </table>
@@ -495,8 +508,8 @@ Finally, we propose a method for directly supervising extrapolated views by dist
 				<td>
 		<div class="b-dics" style="width: 400px">
 		  <!-- 44 -->
-		  <img src="./resources/sanmiguel_depth_donerf.png" width=400px  alt="DONeRF">
-		  <img src="./resources/sanmiguel_depth_target.png" width=400px  alt="Target">
+		  <img src="./resources/sanmiguel_depth_donerf.png" width=400px  alt="w/o \( \mathcal{L}_{cov} \)">
+		  <img src="./resources/sanmiguel_depth_target.png" width=400px  alt="w/ L_cov">
 		</div>
 				</td>
 			</center>
