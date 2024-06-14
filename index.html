@@ -124,6 +124,16 @@
 		vertical-align: middle; /* Align with the text */
 	}
 
+	.noto-sans-<uniquifier> {
+	  font-family: "Noto Sans", sans-serif;
+	  font-optical-sizing: auto;
+	  font-weight: <weight>;
+	  font-style: normal;
+	  font-variation-settings:
+	    "wdth" 100;
+	}
+
+
 </style>
 
 <html>
@@ -141,7 +151,9 @@
 
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
   
   <link rel="stylesheet" href="./definitive-image-comparison-slider-master/src/dics.css">
   <script src="./definitive-image-comparison-slider-master/src/dics.js"></script>
