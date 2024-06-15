@@ -504,9 +504,8 @@ Finally, we propose a method for directly supervising extrapolated views by dist
 	<center><h1>Score Distillation from Large-scale Diffusion Model</h1></center>
 	<tr>
 		<td>
-			Our Depth Oracle predicts multiple potential sampling candidates along each ray by discretizing the space along rays and predicting sampling probabilities along rays.
-			The 3 color channels encode the 3 highest probabilities along the ray - gray values illustrate that there is likely only a single surface that should be sampled, while colorful values indicate that samples need to be spread out in depth.
-			Even a relatively coarse depth prediction is sufficient for DONeRF to place samples efficiently. \( \mathcal{L}\)
+Noise (score) predicted from a diffusion model \( \textbf{s}_{\theta} \) is proportional to the log-gradient of a prior distribution \( p(\textbf{x}) \), or \( \textbf{s}_{\theta}(\textbf{x}_{\tau}, \tau) \approx - \nabla_{\textbf{x}} \text{log} p(\textbf{x}) \).
+Thus, optimizing \( \textbf{x}_{\tau} \) to yield smaller score pushes \( \textbf{x} \) to our prior distribution \( p(\cdot) \). We model our prior distribution using <a href="https://github.com/CompVis/stable-diffusion">Stable Diffusion</a> fine-tuned with <a href="https://arxiv.org/abs/2106.09685">LoRA</a>.
 		</td>
 	</tr>
 </table>
@@ -520,8 +519,8 @@ Finally, we propose a method for directly supervising extrapolated views by dist
 				<td>
 		<div class="b-dics" style="width: 400px">
 		  <!-- 44 -->
-		  <img src="./resources/sanmiguel_depth_donerf.png" width=400px  alt="w/o \( \mathcal{L}_{cov} \)">
-		  <img src="./resources/sanmiguel_depth_target.png" width=400px  alt="w/ L_cov">
+		  <img src="./resources/diffusion_baseline_1.png" width=400px  alt="w.o/ score loss">
+		  <img src="./resources/diffusion_ours_1.png" width=400px  alt="w/ score loss">
 		</div>
 				</td>
 			</center>
@@ -531,8 +530,8 @@ Finally, we propose a method for directly supervising extrapolated views by dist
 				<td>
 					<div class="b-dics" style="width: 400px">
 		  <!-- 39 -->
-		  <img src="./resources/classroom_depth_donerf.png" width=400px  alt="DONeRF">
-		  <img src="./resources/classroom_depth_target.png" width=400px  alt="Target">
+		  <img src="./resources/diffusion_baseline_2.png" width=400px  alt="w.o/ score loss">
+		  <img src="./resources/diffusion_ours_2.png" width=400px  alt="w/ score loss">
 		</div>
 					</div>
 				</td>
@@ -543,8 +542,8 @@ Finally, we propose a method for directly supervising extrapolated views by dist
 				<td>
 					<div class="b-dics" style="width: 400px">
 		  <!-- 57 -->
-		  <img src="./resources/forest_depth_donerf.png" width=400px  alt="DONeRF">
-		  <img src="./resources/forest_depth_target.png" width=400px  alt="Target">
+		  <img src="./resources/diffusion_baseline_3.png" width=400px  alt="w.o/ score loss">
+		  <img src="./resources/diffusion_ours_3.png" width=400px  alt="w/ score loss">
 		</div>
 				</td>
 			</center>
