@@ -362,6 +362,15 @@
 	<center>
 		<table align=center width=1200px>
 			<tr>
+				<td>
+					<center>
+						<span style="font-size:16px"><b>Our method aligns and flattens Gaussian covariances to scene
+								surfaces estimated from monocular normal prediction network</b></span>
+					</center>
+				</td>
+			</tr>
+			<br>
+			<tr>
 				<td width=1200px>
 					<center>
 						<video controls autoplay muted loop>
@@ -371,15 +380,8 @@
 					</center>
 				</td>
 			</tr>
-			<br>
-			<tr>
-				<td>
-					<center>
-						<span style="font-size:16px"><b>Our method aligns and flattens Gaussian covariances to scene
-								surfaces estimated from monocular normal prediction network</b></span>
-					</center>
-				</td>
-			</tr>
+			
+
 		</table>
 	</center>
 
@@ -407,7 +409,16 @@
 	</center> -->
 
 	<br>
-
+	<center>
+		<table align=center width=1200px>
+			<tr>
+				<td align=center width=1200px>
+					<span style="font-size:16px"><b>Our method jointly reconstructs static scene with dynamic objects
+							such as cars.</b></span>
+				</td>
+			</tr>
+		</table>
+	</center>
 	<center>
 		<table align=center width=1200px>
 			<tr>
@@ -450,16 +461,7 @@
 		</table>
 	</center>
 
-	<center>
-		<table align=center width=1200px>
-			<tr>
-				<td align=center width=1200px>
-					<span style="font-size:16px"><b>Our method jointly reconstructs static scene with dynamic objects
-							such as cars.</b></span>
-				</td>
-			</tr>
-		</table>
-	</center>
+
 
 	<br>
 	<hr>
@@ -468,14 +470,7 @@
 			<h1><b>Paper Summary at a Glance</b></h1>
 		</center>
 		<h2 style="color:dimgrey;">Problem Statement</h2>
-		<tr>
-			<!-- <td align=center width=1200px> -->
-			<td>
-				<center>
-			<td><img class="round" style="width:1200px" src="./resources/teaser_v7.png" /></td>
-			</center>
-			</td>
-		</tr>
+
 		<!-- </table> -->
 		<!-- <br> -->
 		<!-- <table align=center width=1200px> -->
@@ -484,10 +479,10 @@
 		</center> -->
 		<tr>
 			<td>
-				<center>
+				<!-- <center> -->
 			<td>
-				<br>
-				<ul class="checkmark-list">
+				<!-- <br> -->
+				<!-- <ul class="checkmark-list">
 					<li>Previous urban scene reconstruction methods commonly rely on images collected from driving
 						vehicles with cameras facing and moving forward.</li>
 					<li>These methods can successfully synthesize from views similar to training camera trajectory.</li>
@@ -499,7 +494,15 @@
 						forward-facing cameras. </li>
 					<li>(b) Qualitative comparison on EVS to baselines. Rendering quality on conventional test cameras
 						is not necessarily preserved on EVS.</li>
-				</ul>
+				</ul> -->
+				<!-- <center>
+					<span style="font-size:16px"><b>We tackle the Extrapolated View Synthesis (EVS) problem on views such as looking left, right or downwards from train camera distributions.</b></span>
+				</center> -->
+				<!-- <ul class="checkmark-list">
+					<li>We tackle the Extrapolated View Synthesis (EVS) problem on views such as <b>looking left, right or downwards from train camera distributions.</b></li>
+				</ul> -->
+				We tackle the Extrapolated View Synthesis (EVS) problem on views such as <b>looking left, right or downwards from train camera distributions.</b></li>
+				
 				<!-- Neural rendering-based urban scene reconstruction methods commonly rely on images collected from driving vehicles with cameras facing and moving forward.
 					Although these methods can successfully synthesize from views similar to training camera trajectory,
 					directing the novel view outside the training camera distribution does not guarantee on-par performance.
@@ -511,9 +514,22 @@
 					training camera distribution. (b) Qualitative comparison on EVS to baselines. Render-
 					ing quality on conventional test cameras is not necessarily preserved on EVS. -->
 			</td>
+			<!-- </center> -->
+
+
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<br>
+			</td>
+		</tr>
+		<tr>
+			<!-- <td align=center width=1200px> -->
+			<td>
+				<center>
+			<td><img class="round" style="width:1200px" src="./resources/teaser_projectpage.png" /></td>
 			</center>
-
-
 			</td>
 		</tr>
 	</table>
@@ -523,14 +539,7 @@
 		<!-- <center> -->
 		<h2 style="color:dimgrey;">Overall Pipeline</h2>
 		<!-- </center> -->
-		<tr>
-			<!-- <td align=center width=1200px> -->
-			<td>
-				<center>
-			<td><img class="round" style="width:1200px" src="./resources/pipeline_v3.png" /></td>
-			</center>
-			</td>
-		</tr>
+		
 		<!-- </table> -->
 		<!-- <br> -->
 		<!-- <table align=center width=1200px> -->
@@ -542,20 +551,23 @@
 			<td>
 				<center>
 			<td>
-				<ul class="checkmark-list">
-					<li>We initialize gaussian means using dense LiDAR map and point cloud from SFM.</li>
-					<li>To improve rendering quality for EVS, prior scene knowledge, such as surface normal estimation
-						and large-scale diffusion models, is leveraged.</li>
-					<li>To utilize surface normal prior, we propose Covariance Guidance Loss.
+				We initialize gaussian means using dense <b>LiDAR map</b> and <b>point cloud from SfM</b>.
+				We leveraged prior scene knowledge, such as <b>surface normal estimation</b>
+						and <b>large-scale diffusion models</b>, to improve rendering quality for EVS.
+				<!-- <ul class="checkmark-list"> -->
+					<!-- <li>We initialize gaussian means using dense <b>LiDAR map</b> and <b>point cloud from SfM</b>.</li> -->
+					<!-- <li>To improve rendering quality for EVS, prior scene knowledge, such as <b>surface normal estimation</b>
+						and <b>large-scale diffusion models</b>, is leveraged.</li> -->
+					<!-- <li>We leveraged prior scene knowledge, such as <b>surface normal estimation</b>
+						and <b>large-scale diffusion models</b>, to improve rendering quality for EVS.</li> -->
+					<!-- <li>To utilize surface normal prior, we propose Covariance Guidance Loss.
 						<ul class="checkmark-list">
 							<li>\(\mathcal{L}_{\text{cov}} = \lambda_{\text{axis}} \mathcal{L}_{\text{axis}} + (1 -
 								\lambda_{\text{axis}}) \mathcal{L}_{\text{scale}}\)</li>
 							<li>\(L_{axis}\) is minimized when any of the three covariance axes aligns with the normal
 								vector. </li>
 							<li>\(L_{scale}\) is minimized when scale of the axis aligned to normal is minimized,
-								inducing the covariance to mimic an underlying surface. </li>
-							<!-- <li>\(\mathcal{L}_{\text{scale}} = \sum\limits_{i\in \{\text{0,1,2}\}} {\left|\tilde{\mathbf{S}}[i]\left(\tilde{\mathbf{Q}}[:, i] \cdot G(\mathcal{I}) \right)\right|}/3,\)</li>
-								<li>\(\mathcal{L}_{\text{axis}} = \sum\limits_{i\in \{\text{0,1,2}\}} {|\tilde{\mathbf{Q}}[:, i] \cdot G(\mathcal{I})|}/3,\)</li> -->
+								inducing the covariance to mimic an underlying surface. </li>							
 						</ul>
 					</li>
 					<li>To utilize large-scale diffusion model, we exploit the score distillation.
@@ -569,8 +581,8 @@
 						</ul>
 					</li>
 					<li>To the best of our knowledge, we are the first to address the EVS problem in urban scene
-						reconstruction.</li>
-				</ul>
+						reconstruction.</li> -->
+				<!-- </ul> -->
 
 				<!-- To improve rendering quality for EVS, we initialize our model by constructing dense LiDAR map, and
 					propose to leverage prior scene knowledge such as surface normal estimator and large-scale diffusion
@@ -583,6 +595,19 @@
 			</center>
 			</td>
 		</tr>
+		<tr>
+			<td>
+				<br>
+			</td>
+		</tr>
+		<tr>
+			<!-- <td align=center width=1200px> -->
+			<td>
+				<center>
+			<td><img class="round" style="width:1200px" src="./resources/pipeline_v3.png" /></td>
+			</center>
+			</td>
+		</tr>
 	</table>
 
 	<hr>
@@ -591,18 +616,11 @@
 		<center>
 			<h1><b>Covariance Guidance with Surface Normal Prior</b></h1>
 		</center>
-		<tr>
-			<td>
-				<center>
-			<td class="figure-cell"><img class="round" style="width:1200px"
-					src="./resources/normal_prior_merge_v6.1.png" /></td>
-			</center>
-			</td>
-		</tr>
+
 		<tr>
 			<td>
 			<td class="spaced-heading">
-				<h2 style="color:dimgrey;">The Lazy Covariance Optimization Problem</h2>
+				<h2 style="color:dimgrey;">The Lazy Covariance Optimization (LCO) Problem</h2>
 			</td>
 			</td>
 		</tr>
@@ -612,15 +630,24 @@
 				<center>
 			<td>
 				<ul class="checkmark-list">
-					<li>The shape and orientation of learned covariances tend to over-fit to a certain viewing angle.
-					</li>
-					<li>We hypothesize that the covariance is trained to cover the the frustum of a training pixel with
-						a minimal optimization effort.</li>
+					<!-- <li>The shape and orientation of learned covariances tend to over-fit to a certain viewing angle.</li> -->
+					<!-- <li>LCO problem refers to the case where the covariance is trained to cover the the frustum of a training pixel with a minimal optimization effort.</li>
 					<li>As a result, these covariances are prone to produce unwanted cavity on an underlying scene
-						surface.</li>
-					<li>The right-most ellipsoid in (a) shows such a case.</li>
+						surface.</li> -->
+					LCO problem refers to the case where the covariance is trained to cover the the frustum of a training pixel with a minimal optimization effort.
+					As a result, these covariances are prone to produce unwanted cavity on an underlying scene surface.
+					<!-- <li>The right-most ellipsoid in (a) shows such a case.</li> -->
 				</ul>
 			</td>
+			</center>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<center>
+			<td class="figure-cell"><img class="round" style="width:1200px"
+				src="./resources/normal_prior_crop.png" /></td>
+					<!-- src="./resources/normal_prior_merge_v6.1.png" /></td> -->
 			</center>
 			</td>
 		</tr>
@@ -635,23 +662,17 @@
 			<td>
 				<center>
 			<td>
-				<ul class="checkmark-list">
-					<li>Our key idea is to guide the orientation and shape of covariances to make them behave like the
-						underlying scene surface.</li>
-					<li>(a) Illustration on the working mechanism of \(L_{cov}\) =\(L_{axis}\) + \(L_{scale}\).
-						<ul>
-							<li>\(L_{axis}\) aligns covariance axes to a surface normal vector.</li>
-							<li>\(L_{scale}\) minimizes the scale along the covariance axis aligned with surface normal
-							</li>
-						</ul>
-					</li>
-					<li>(b) Visualizing \(L_{axis}\) for different alignment between normal and covariances.
-						<ul>
-							<li>\(L_{axis}\) is minimized when an axis aligns with the normal.</li>
-						</ul>
-					</li>
+				<!-- <ul class="checkmark-list"> -->
+					Our key idea is to guide the orientation and shape of covariances to make them behave like the
+						underlying scene surface. Specifically, we propose \(\mathcal{L}_{cov}\) =\(\mathcal{L}_{axis}\) + \(\mathcal{L}_{scale}\), where
+						\(\mathcal{L}_{axis}\) aligns covariance axes to a surface normal vector and 
+							\(\mathcal{L}_{scale}\) minimizes the scale along the covariance axis aligned with surface normal
 
-				</ul>
+					<!-- <li>(b) Visualizing \(L_{axis}\) for different alignment between normal and covariances. \(L_{axis}\) is minimized when an axis aligns with the normal.</li> -->
+					<!-- \(\mathcal{L}_{\text{scale}} = \sum\limits_{i\in \{\text{0,1,2}\}} {\left|\tilde{\mathbf{S}}[i]\left(\tilde{\mathbf{Q}}[:, i] \cdot G(\mathcal{I}) \right)\right|}/3,\) -->
+					<!-- \(\tilde{\textbf{q}} = \prod_{j \in \mathcal{N}} \mathcal{S}\left( \textbf{q}_{I}, \textbf{q}_j, w_{j} \right), \ \ \ w_{j} = \alpha_{j} \prod_{l=1}^{j-1} (1 - \alpha_{l})\) -->
+					<!-- \(\mathcal{L}_{\text{axis}} = \sum\limits_{i\in \{\text{0,1,2}\}} {|\tilde{\mathbf{Q}}[:, i] \cdot G(\mathcal{I})|}/3,\) -->
+				<!-- </ul> -->
 
 				<!-- The shape and orientation of learned covariances tend to over-fit to a certain viewing angle,
 					which we hypothesize that the covariance is trained to cover the the frustum of a training pixel with a
@@ -684,7 +705,7 @@
 	<br> -->
 
 	<br>
-	<h2 style="color:dimgrey;">Qualitative Ablation Results on \(L_{cov}\)</h2>
+	<!-- <h2 style="color:dimgrey;">Qualitative Ablation Results on \(L_{cov}\)</h2> -->
 	<table align=center width=400px>
 		<tr>
 			<td align=center width=400px>
@@ -798,11 +819,11 @@
 				</center>
 				<tr>
 					<td>
-						<ul class="checkmark-list">
+						<!-- <ul class="checkmark-list">
 							<li>Qualitative comparison on KITTI-360 for extrapolated view synthesis.</li>
 							<li>EVS-D and EVS-LR refers to extrapolated views facing downwards and left/right, respectively.</li>
-						</ul>
-						
+						</ul> -->
+						EVS-D and EVS-LR refers to extrapolated views facing downwards and left/right, respectively.
 						
 					</td>
 				</tr>
