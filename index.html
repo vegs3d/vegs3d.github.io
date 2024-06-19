@@ -1,8 +1,9 @@
 <style type="text/css">
 	body {
-		font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+		/* font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;  */
+		font-family: "Noto Sans";
 		font-weight: 300;
-		font-size: 20px;
+		font-size: 18px;
 		margin-left: auto;
 		margin-right: auto;
 		width: 1200px;
@@ -24,10 +25,10 @@
 
 	video.header-vid {
 		height: 140px;
-		border: 1px solid black;
-		border-radius: 10px;
-		-moz-border-radius: 10px;
-		-webkit-border-radius: 10px;
+		border: 0px solid black;
+		border-radius: 0px;
+		-moz-border-radius: 0px;
+		-webkit-border-radius: 0px;
 	}
 
 	img.header-img {
@@ -132,43 +133,84 @@
 		background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1.0), rgba(0, 0, 0, 0));
 	}
 
-	/* emjay added (start) */	
+	/* emjay added (start) */
 	.checkmark-list {
-		list-style-type: none; /* Remove default bullets */
-		font-size:17px;
-		padding-left: 0; /* Remove default padding */
-		margin-left: 0; /* Remove default margin */
+		list-style-type: none;
+		/* Remove default bullets */
+		font-size: 17px;
+		padding-left: 0;
+		/* Remove default padding */
+		margin-left: 0;
+		/* Remove default margin */
 	}
-	.checkmark-list > li:before {
-		content: '\2713'; /* Unicode character for checkmark */
+
+	.checkmark-list>li:before {
+		content: '\2713';
+		/* Unicode character for checkmark */
 		margin-right: 8px;
-		color: black; /* Optional: change checkmark color */
+		color: black;
+		/* Optional: change checkmark color */
 	}
+
 	.checkmark-list ul {
-		padding-left: 0; /* Remove default padding from nested lists */		
-		margin-left: 40px; /* Indent nested lists */
-		list-style-type: none; /* Remove bullets from nested lists */
+		padding-left: 0;
+		/* Remove default padding from nested lists */
+		margin-left: 40px;
+		/* Indent nested lists */
+		list-style-type: none;
+		/* Remove bullets from nested lists */
 	}
-	.checkmark-list ul > li:before {
-		content: '\2713'; /* Unicode character for checkmark */
+
+	.checkmark-list ul>li:before {
+		content: '\2713';
+		/* Unicode character for checkmark */
 		margin-right: 8px;
-		color: black; /* Optional: change checkmark color for nested items */
+		color: black;
+		/* Optional: change checkmark color for nested items */
 	}
+
 	.spaced-heading {
-		margin-top: 20px; /* Adjust the value to increase or decrease space */
+		margin-top: 20px;
+		/* Adjust the value to increase or decrease space */
 	}
+
 	.figure-cell {
-		padding-bottom: 40px; /* Adjust the value to increase or decrease space */
+		padding-bottom: 40px;
+		/* Adjust the value to increase or decrease space */
 	}
-	/* emjay added (end) */	
-    
+
+	/* emjay added (end) */
+
+	.icon {
+		display: inline-block;
+		width: 36px;
+		/* Adjust as needed */
+		height: 36px;
+		/* Adjust as needed */
+		background-image: url('./resources/Favicon.ico');
+		background-size: contain;
+		/* Ensure the SVG fits within the span */
+		background-repeat: no-repeat;
+		/* Prevent tiling */
+		vertical-align: middle;
+		/* Align with the text */
+	}
+
+	.noto-sans-<uniquifier> {
+		font-family: "Noto Sans", sans-serif;
+		font-optical-sizing: auto;
+		font-weight: <weight>;
+		font-style: normal;
+		font-variation-settings:
+			"wdth" 100;
+	}
 </style>
 
 <html>
 
 <head>
-	<title>VEGS: View Extrapolation of Urban Scenes in 3D Gaussian Splatting using Learned Priors</title>
-	<meta property="og:image" content="./resources/teaser.png" />
+	<title> <b>VEGS: View Extrapolation of Urban Scenes in 3D Gaussian Splatting using Learned Priors</b></title>
+	<meta property="og:image" content="./resources/vegs_icon.png" />
 	<!-- Facebook automatically scrapes this. Go to https://developers.facebook.com/tools/debug/ if you update and want to force Facebook to rescrape. -->
 	<meta property="og:title"
 		content="VEGS: View Extrapolation of Urban Scenes in 3D Gaussian Splatting using Learned Priors" />
@@ -180,6 +222,15 @@
 											 To the best of our knowledge, we are the first to address the EVS problem in urban scene reconstruction.
 " />
 
+	<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+	<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap"
+		rel="stylesheet">
+	<link rel="icon" href="./resources/Favicon.ico">
+	<link rel="stylesheet" href="./definitive-image-comparison-slider-master/src/dics.css">
+	<script src="./definitive-image-comparison-slider-master/src/dics.js"></script>
 
 	<link rel="stylesheet" href="./definitive-image-comparison-slider-master/src/dics.css">
 	<script src="./definitive-image-comparison-slider-master/src/dics.js"></script>
@@ -215,7 +266,8 @@
 				<tr>
 					<td align=center width=300px>
 						<center>
-							<span style="font-size:36px">VEGS: View Extrapolation of Urban Scenes in 3D Gaussian
+							<span class="icon"></span> <!-- Add this line to include the icon -->
+							<span style="font-size:36px"> VEGS : View Extrapolation of Urban Scenes in 3D Gaussian
 								Splatting using Learned Priors</span>
 						</center>
 					</td>
@@ -307,8 +359,6 @@
 		</table>
 	</center>
 
-	<br>
-
 	<center>
 		<table align=center width=1200px>
 			<tr>
@@ -321,43 +371,136 @@
 					</center>
 				</td>
 			</tr>
+			<br>
+			<tr>
+				<td>
+					<center>
+						<span style="font-size:16px"><b>Our method aligns and flattens Gaussian covariances to scene
+								surfaces estimated from monocular normal prediction network</b></span>
+					</center>
+				</td>
+			</tr>
 		</table>
 	</center>
 
+	<!-- <center>
+		<table align=center width=1200px>
+			<tr>
+				<td width=1200px>
+					<center>
+						<video controls autoplay muted loop>
+							<source src="./resources/videos/3_render_0_0_0_less_small.mp4" type="video/mp4">
+							Your browser does not support the video tag.
+						  </video>
+					</center>
+				</td>
+			</tr>
+			<br>
+			<tr>
+				<td>
+					<center>
+					<span style="font-size:15px"><b>Our method jointly reconstructs static scene with dynamic object such as cars, which can then be relocated arbitrarily</b></span>
+					</center>
+				</td>
+			</tr>
+		</table>
+	</center> -->
+
+	<br>
+
+	<center>
+		<table align=center width=1200px>
+			<tr>
+				<td width=600px>
+					<center>
+						<video controls autoplay muted loop>
+							<source src="./resources/videos/3_render_0_0_0_dynamic_small.mp4" type="video/mp4">
+							Your browser does not support the video tag.
+						</video>
+					</center>
+				</td>
+				<td width=600px>
+					<center>
+						<video controls autoplay muted loop>
+							<source src="./resources/videos/5_render_0_0_0_small.mp4" type="video/mp4">
+							Your browser does not support the video tag.
+						</video>
+					</center>
+				</td>
+			</tr>
+
+			<tr>
+				<td width=600px>
+					<center>
+						<video controls autoplay muted loop>
+							<source src="./resources/videos/render_0_0_0_small.mp4" type="video/mp4">
+							Your browser does not support the video tag.
+						</video>
+					</center>
+				</td>
+				<td width=600px>
+					<center>
+						<video controls autoplay muted loop>
+							<source src="./resources/videos/2_render_0_0_0_small.mp4" type="video/mp4">
+							Your browser does not support the video tag.
+						</video>
+					</center>
+				</td>
+			</tr>
+		</table>
+	</center>
+
+	<center>
+		<table align=center width=1200px>
+			<tr>
+				<td align=center width=1200px>
+					<span style="font-size:16px"><b>Our method jointly reconstructs static scene with dynamic objects
+							such as cars.</b></span>
+				</td>
+			</tr>
+		</table>
+	</center>
+
+	<br>
 	<hr>
 	<table align=center width=1200px>
 		<center>
-			<h1>Paper Summary at a Glance</h1>						
+			<h1><b>Paper Summary at a Glance</b></h1>
 		</center>
 		<h2 style="color:dimgrey;">Problem Statement</h2>
 		<tr>
 			<!-- <td align=center width=1200px> -->
 			<td>
 				<center>
-					<td><img class="round" style="width:1200px" src="./resources/teaser_v7.png" /></td>
-				</center>
+			<td><img class="round" style="width:1200px" src="./resources/teaser_v7.png" /></td>
+			</center>
 			</td>
 		</tr>
-	<!-- </table> -->
-	<!-- <br> -->
-	<!-- <table align=center width=1200px> -->
+		<!-- </table> -->
+		<!-- <br> -->
+		<!-- <table align=center width=1200px> -->
 		<!-- <center>
 			<h1>Overall Pipeline</h1>
 		</center> -->
 		<tr>
 			<td>
 				<center>
-				<td>		
-					<br>			
-					<ul class="checkmark-list">
-						<li>Previous urban scene reconstruction methods commonly rely on images collected from driving vehicles with cameras facing and moving forward.</li>
-						<li>These methods can successfully synthesize from views similar to training camera trajectory.</li>
-						<li>However, directing the novel view outside the training camera distribution does not guarantee on-par performance.</li>
-						<li>We tackle the Extrapolated View Synthesis (EVS) problem on views such as looking left, right or downwards with respect to train distributions.</li>
-						<li>(a) Illustration of Extrapolated View Synthesis (EVS) problem in urban scenes reconstructed with forward-facing cameras. </li>
-						<li>(b) Qualitative comparison on EVS to baselines. Rendering quality on conventional test cameras is not necessarily preserved on EVS.</li>
-					</ul>					
-					<!-- Neural rendering-based urban scene reconstruction methods commonly rely on images collected from driving vehicles with cameras facing and moving forward.
+			<td>
+				<br>
+				<ul class="checkmark-list">
+					<li>Previous urban scene reconstruction methods commonly rely on images collected from driving
+						vehicles with cameras facing and moving forward.</li>
+					<li>These methods can successfully synthesize from views similar to training camera trajectory.</li>
+					<li>However, directing the novel view outside the training camera distribution does not guarantee
+						on-par performance.</li>
+					<li>We tackle the Extrapolated View Synthesis (EVS) problem on views such as looking left, right or
+						downwards with respect to train distributions.</li>
+					<li>(a) Illustration of Extrapolated View Synthesis (EVS) problem in urban scenes reconstructed with
+						forward-facing cameras. </li>
+					<li>(b) Qualitative comparison on EVS to baselines. Rendering quality on conventional test cameras
+						is not necessarily preserved on EVS.</li>
+				</ul>
+				<!-- Neural rendering-based urban scene reconstruction methods commonly rely on images collected from driving vehicles with cameras facing and moving forward.
 					Although these methods can successfully synthesize from views similar to training camera trajectory,
 					directing the novel view outside the training camera distribution does not guarantee on-par performance.
 					In this paper, we tackle the Extrapolated View Synthesis (EVS) problem by evaluating the reconstructions
@@ -367,8 +510,10 @@
 					similar to training camera poses, we evaluate view synthesis on cameras distant from
 					training camera distribution. (b) Qualitative comparison on EVS to baselines. Render-
 					ing quality on conventional test cameras is not necessarily preserved on EVS. -->
-				</td>
-				</center>
+			</td>
+			</center>
+
+
 			</td>
 		</tr>
 	</table>
@@ -376,57 +521,66 @@
 	<br>
 	<table align=center width=1200px>
 		<!-- <center> -->
-			<h2 style="color:dimgrey;">Overall Pipeline</h2>
+		<h2 style="color:dimgrey;">Overall Pipeline</h2>
 		<!-- </center> -->
 		<tr>
 			<!-- <td align=center width=1200px> -->
 			<td>
 				<center>
-					<td><img class="round" style="width:1200px" src="./resources/pipeline_v3.png" /></td>
-				</center>
+			<td><img class="round" style="width:1200px" src="./resources/pipeline_v3.png" /></td>
+			</center>
 			</td>
 		</tr>
-	<!-- </table> -->
-	<!-- <br> -->
-	<!-- <table align=center width=1200px> -->
+		<!-- </table> -->
+		<!-- <br> -->
+		<!-- <table align=center width=1200px> -->
 		<!-- <center>
 			<h1>Overall Pipeline</h1>
 		</center> -->
-				
+
 		<tr>
 			<td>
 				<center>
-				<td>
-					<ul class="checkmark-list">
-						<li>We initialize gaussian means using dense LiDAR map and point cloud from SFM.</li>
-						<li>To improve rendering quality for EVS, prior scene knowledge, such as surface normal estimation and large-scale diffusion models, is leveraged.</li>
-						<li>To utilize surface normal prior, we propose Covariance Guidance Loss.									
-							<ul class="checkmark-list">
-								<li>\(\mathcal{L}_{\text{cov}} = \lambda_{\text{axis}} \mathcal{L}_{\text{axis}} + (1 - \lambda_{\text{axis}}) \mathcal{L}_{\text{scale}}\)</li>
-								<li>\(L_{axis}\) is minimized when any of the three covariance axes aligns with the normal vector. </li>
-								<li>\(L_{scale}\) is minimized when scale of the axis aligned to normal is minimized, inducing the covariance to mimic an underlying surface. </li>
-								<!-- <li>\(\mathcal{L}_{\text{scale}} = \sum\limits_{i\in \{\text{0,1,2}\}} {\left|\tilde{\mathbf{S}}[i]\left(\tilde{\mathbf{Q}}[:, i] \cdot G(\mathcal{I}) \right)\right|}/3,\)</li>
+			<td>
+				<ul class="checkmark-list">
+					<li>We initialize gaussian means using dense LiDAR map and point cloud from SFM.</li>
+					<li>To improve rendering quality for EVS, prior scene knowledge, such as surface normal estimation
+						and large-scale diffusion models, is leveraged.</li>
+					<li>To utilize surface normal prior, we propose Covariance Guidance Loss.
+						<ul class="checkmark-list">
+							<li>\(\mathcal{L}_{\text{cov}} = \lambda_{\text{axis}} \mathcal{L}_{\text{axis}} + (1 -
+								\lambda_{\text{axis}}) \mathcal{L}_{\text{scale}}\)</li>
+							<li>\(L_{axis}\) is minimized when any of the three covariance axes aligns with the normal
+								vector. </li>
+							<li>\(L_{scale}\) is minimized when scale of the axis aligned to normal is minimized,
+								inducing the covariance to mimic an underlying surface. </li>
+							<!-- <li>\(\mathcal{L}_{\text{scale}} = \sum\limits_{i\in \{\text{0,1,2}\}} {\left|\tilde{\mathbf{S}}[i]\left(\tilde{\mathbf{Q}}[:, i] \cdot G(\mathcal{I}) \right)\right|}/3,\)</li>
 								<li>\(\mathcal{L}_{\text{axis}} = \sum\limits_{i\in \{\text{0,1,2}\}} {|\tilde{\mathbf{Q}}[:, i] \cdot G(\mathcal{I})|}/3,\)</li> -->
-							</ul>
-						</li>
-						<li>To utilize large-scale diffusion model, we exploit the score distillation.
-							<ul class=""checkmark-list">
-								<li>\(\nabla_{M} \mathcal{L}_{\text{score}} = - \textbf{s}_{\theta}(\hat{\mathcal{I}}_{\tau}, \tau) \approx \nabla_{\textbf{x}} \text{log} p(\textbf{x})\)</li>
-								<li>\(\hat{\mathcal{I}_{\tau}} = \sqrt{\bar{\alpha}_{\tau}} \hat{\mathcal{I}} + (1 - \bar{\alpha}_{\tau})\epsilon\), where \(\hat{\mathcal{I}}\) is a rendering from our model \(M\) on EVS.</li>
-							</ul>
-						</li>
-						<li>To the best of our knowledge, we are the first to address the EVS problem in urban scene reconstruction.</li>						
-					</ul>
+						</ul>
+					</li>
+					<li>To utilize large-scale diffusion model, we exploit the score distillation.
+						<ul class="" checkmark-list">
+							<li>\(\nabla_{M} \mathcal{L}_{\text{score}} = -
+								\textbf{s}_{\theta}(\hat{\mathcal{I}}_{\tau}, \tau) \approx \nabla_{\textbf{x}}
+								\text{log} p(\textbf{x})\)</li>
+							<li>\(\hat{\mathcal{I}_{\tau}} = \sqrt{\bar{\alpha}_{\tau}} \hat{\mathcal{I}} + (1 -
+								\bar{\alpha}_{\tau})\epsilon\), where \(\hat{\mathcal{I}}\) is a rendering from our
+								model \(M\) on EVS.</li>
+						</ul>
+					</li>
+					<li>To the best of our knowledge, we are the first to address the EVS problem in urban scene
+						reconstruction.</li>
+				</ul>
 
-					<!-- To improve rendering quality for EVS, we initialize our model by constructing dense LiDAR map, and
+				<!-- To improve rendering quality for EVS, we initialize our model by constructing dense LiDAR map, and
 					propose to leverage prior scene knowledge such as surface normal estimator and large-scale diffusion
 					model.
 					\(\nabla_{M} \mathcal{L}_{\text{score}} = - \textbf{s}_{\theta}(\hat{\mathcal{I}}_{\tau}, \tau) \approx \nabla_{\textbf{x}} \text{log} p(\textbf{x})\)
 					where \(\hat{\mathcal{I}_{\tau}} = \sqrt{\bar{\alpha}_{\tau}} \hat{\mathcal{I}} + (1 - \bar{\alpha}_{\tau})\epsilon\) and \(\hat{\mathcal{I}}\) is a rendering from our model \(M\) on EVS. -->
-					<!-- Qualitative and quantitative comparisons demonstrate the effectiveness of our methods on EVS. -->
-					
-				</td>
-				</center>
+				<!-- Qualitative and quantitative comparisons demonstrate the effectiveness of our methods on EVS. -->
+
+			</td>
+			</center>
 			</td>
 		</tr>
 	</table>
@@ -435,61 +589,71 @@
 	<table align=center width=1200px>
 		<!-- <center><h1><b>The Lazy Covariance Optimization Problem</b></h1></center> -->
 		<center>
-			<h1>Covariance Guidance with Surface Normal Prior</h1>			
-		</center>				
+			<h1><b>Covariance Guidance with Surface Normal Prior</b></h1>
+		</center>
 		<tr>
 			<td>
 				<center>
-					<td class="figure-cell"><img class="round" style="width:1200px" src="./resources/normal_prior_merge_v6.1.png" /></td>
-				</center>
+			<td class="figure-cell"><img class="round" style="width:1200px"
+					src="./resources/normal_prior_merge_v6.1.png" /></td>
+			</center>
 			</td>
 		</tr>
 		<tr>
-			<td>				
-				<td class="spaced-heading"><h2 style="color:dimgrey;">The Lazy Covariance Optimization Problem</h2></td>
-			</td>			
-		</tr>		
+			<td>
+			<td class="spaced-heading">
+				<h2 style="color:dimgrey;">The Lazy Covariance Optimization Problem</h2>
+			</td>
+			</td>
+		</tr>
 		<tr> </tr>
 		<tr>
 			<td>
 				<center>
-				<td>
-					<ul class="checkmark-list">
-						<li>The shape and orientation of learned covariances tend to over-fit to a certain viewing angle.</li>
-						<li>We hypothesize that the covariance is trained to cover the the frustum of a training pixel with a minimal optimization effort.</li>
-						<li>As a result, these covariances are prone to produce unwanted cavity on an underlying scene surface.</li>
-						<li>The right-most ellipsoid in (a) shows such a case.</li>
-					</ul>
-				</td>
-				</center>
+			<td>
+				<ul class="checkmark-list">
+					<li>The shape and orientation of learned covariances tend to over-fit to a certain viewing angle.
+					</li>
+					<li>We hypothesize that the covariance is trained to cover the the frustum of a training pixel with
+						a minimal optimization effort.</li>
+					<li>As a result, these covariances are prone to produce unwanted cavity on an underlying scene
+						surface.</li>
+					<li>The right-most ellipsoid in (a) shows such a case.</li>
+				</ul>
+			</td>
+			</center>
 			</td>
 		</tr>
 		<tr>
-			<td>				
-				<td><h2 style="color:dimgrey;">Covariance Guidance Loss</h2></td>
-			</td>			
+			<td>
+			<td>
+				<h2 style="color:dimgrey;">Covariance Guidance Loss</h2>
+			</td>
+			</td>
 		</tr>
 		<tr>
 			<td>
 				<center>
-				<td>					
-					<ul class="checkmark-list">
-						<li>Our key idea is to guide the orientation and shape of covariances to make them behave like the underlying scene surface.</li>
-						<li>(a) Illustration on the working mechanism of \(L_{cov}\) =\(L_{axis}\) + \(L_{scale}\).
-							<ul>
-								<li>\(L_{axis}\) aligns covariance axes to a surface normal vector.</li>
-								<li>\(L_{scale}\) minimizes the scale along the covariance axis aligned with surface normal</li>
-							</ul>
-						</li>						
-						<li>(b) Visualizing \(L_{axis}\) for different alignment between normal and covariances.
-							<ul>
-								<li>\(L_{axis}\) is minimized when an axis aligns with the normal.</li>							
-							</ul>							
-						</li>
-						
-					</ul>
+			<td>
+				<ul class="checkmark-list">
+					<li>Our key idea is to guide the orientation and shape of covariances to make them behave like the
+						underlying scene surface.</li>
+					<li>(a) Illustration on the working mechanism of \(L_{cov}\) =\(L_{axis}\) + \(L_{scale}\).
+						<ul>
+							<li>\(L_{axis}\) aligns covariance axes to a surface normal vector.</li>
+							<li>\(L_{scale}\) minimizes the scale along the covariance axis aligned with surface normal
+							</li>
+						</ul>
+					</li>
+					<li>(b) Visualizing \(L_{axis}\) for different alignment between normal and covariances.
+						<ul>
+							<li>\(L_{axis}\) is minimized when an axis aligns with the normal.</li>
+						</ul>
+					</li>
 
-					<!-- The shape and orientation of learned covariances tend to over-fit to a certain viewing angle,
+				</ul>
+
+				<!-- The shape and orientation of learned covariances tend to over-fit to a certain viewing angle,
 					which we hypothesize that the covariance is trained to cover the the frustum of a training pixel with a
 					minimal optimization effort.
 					As a result, these covariances are prone to produce unwanted cavity on an underlying scene surface,
@@ -499,8 +663,8 @@
 					
 					(b) Visualizing \(L_{axis}\) for different alignment between normal and covariances.
 					\(L_{axis}\) is minimized when an axis aligns with the normal. See supplements for detailed derivation. -->
-				</td>
-				</center>
+			</td>
+			</center>
 			</td>
 		</tr>
 	</table>
@@ -564,22 +728,88 @@
 			</td>
 		</tr>
 	</table>
+
+	<!--  -->
 	<br>
 	<hr>
 
 	<table align=center width=1200px>
 		<center>
-			<h1>Comparison to Baseline</h1>
+			<h1><b>Score Distillation from Large-scale Diffusion Model</b></h1>
 		</center>
 		<tr>
 			<td>
-				Qualitative comparison on KITTI-360 for extrapolated view synthesis.
-				EVS-D and EVS-LR refers to extrapolated views facing downwards and left/right, respectively.
+				Noise (score) predicted from a diffusion model \( \textbf{s}_{\theta} \) is proportional to the
+				log-gradient of a prior distribution \( p(\textbf{x}) \), or \( \textbf{s}_{\theta}(\textbf{x}_{\tau},
+				\tau) \approx - \nabla_{\textbf{x}} \text{log} p(\textbf{x}) \).
+				Thus, optimizing \( \textbf{x}_{\tau} \) to yield smaller score pushes \( \textbf{x} \) to our prior
+				distribution \( p(\cdot) \). We model our prior distribution using <a
+					href="https://github.com/CompVis/stable-diffusion">Stable Diffusion</a> fine-tuned with <a
+					href="https://arxiv.org/abs/2106.09685">LoRA</a>.
 			</td>
 		</tr>
 	</table>
 	<br>
 
+	<table align=center width=1200px>
+
+		<tr>
+			<td align=center width=400px>
+				<center>
+			<td>
+				<div class="b-dics" style="width: 400px">
+					<!-- 44 -->
+					<img src="./resources/diffusion_baseline_1.png" width=400px alt="w.o/ score loss">
+					<img src="./resources/diffusion_ours_1.png" width=400px alt="w/ score loss">
+				</div>
+			</td>
+			</center>
+			</td>
+			<td align=center width=400px>
+				<center>
+			<td>
+				<div class="b-dics" style="width: 400px">
+					<!-- 39 -->
+					<img src="./resources/diffusion_baseline_2.png" width=400px alt="w.o/ score loss">
+					<img src="./resources/diffusion_ours_2.png" width=400px alt="w/ score loss">
+				</div>
+				</div>
+			</td>
+			</center>
+			</td>
+			<td align=center width=400px>
+				<center>
+			<td>
+				<div class="b-dics" style="width: 400px">
+					<!-- 57 -->
+					<img src="./resources/diffusion_baseline_3.png" width=400px alt="w.o/ score loss">
+					<img src="./resources/diffusion_ours_3.png" width=400px alt="w/ score loss">
+				</div>
+			</td>
+			<!--  -->
+
+			<br>
+			
+
+			<table align=center width=1200px>
+				<center>
+					<hr>
+					<h1><b>Comparison to Baseline</b></h1>
+				</center>
+				<tr>
+					<td>
+						<ul class="checkmark-list">
+							<li>Qualitative comparison on KITTI-360 for extrapolated view synthesis.</li>
+							<li>EVS-D and EVS-LR refers to extrapolated views facing downwards and left/right, respectively.</li>
+						</ul>
+						
+						
+					</td>
+				</tr>
+			</table>
+			<br>
+		</tr>
+	</table>
 	<table align=center width=1200px>
 
 		<tr>
@@ -608,15 +838,15 @@
 					<img src="./resources/cp_down2_mars_0000003622_Rx_3A -16_7C Rz_3A 0 _7C tz_3A 0.16.png" width=400px
 						alt="MARS">
 					<img src="./resources/cp_down2_01957_frame_00003622.0.png" width=400px alt="BlockNeRF++">
-					<img src="./resources/cp_down2_3dgs_2013_05_28_drive_0006_sync_static_0000003251_0000003634-0000003622_Rx-16_Rz0_tz1.6.png" width=400px
-						alt="3DGS">
-					<img src="./resources/cp_down2_ours_2013_05_28_drive_0006_sync_static_0000003251_0000003634-0000003622_Rx-16_Rz0_tz1.6.png" width=400px
-						alt="VEGS">
+					<img src="./resources/cp_down2_3dgs_2013_05_28_drive_0006_sync_static_0000003251_0000003634-0000003622_Rx-16_Rz0_tz1.6.png"
+						width=400px alt="3DGS">
+					<img src="./resources/cp_down2_ours_2013_05_28_drive_0006_sync_static_0000003251_0000003634-0000003622_Rx-16_Rz0_tz1.6.png"
+						width=400px alt="VEGS">
 				</div>
 			</td>
 			</center>
 			</td>
-			
+
 			<td align=center width=400px>
 				<center>
 			<td>
@@ -625,16 +855,14 @@
 					<img src="./resources/cp_lr2_mars_0000003497_Rx_3A 0_7C Rz_3A 60 _7C tz_3A 0.png" width=400px
 						alt="MARS">
 					<img src="./resources/cp_lr2_bn_00312_frame_00003497.0.png" width=400px alt="BlockNeRF++">
-					<img src="./resources/cp_lr2_splat_0000003497_Rx0_Rz-60_tz0_440.png" width=400px
-						alt="3DGS">
-					<img src="./resources/cp_lr2_ours_0000003497_Rx0_Rz-60_tz0.png" width=400px
-						alt="VEGS">
+					<img src="./resources/cp_lr2_splat_0000003497_Rx0_Rz-60_tz0_440.png" width=400px alt="3DGS">
+					<img src="./resources/cp_lr2_ours_0000003497_Rx0_Rz-60_tz0.png" width=400px alt="VEGS">
 				</div>
 				</div>
 			</td>
 			</center>
 			</td>
-			
+
 			<!-- <td align=center width=400px>
 				<center>
 			<td>
@@ -654,24 +882,24 @@
 		<tr>
 			<td align=center width=400px>
 				<center>
-					<th>
-					EVS-D
-					</th>
-				</center>
+			<th>
+				EVS-D
+			</th>
+			</center>
 			</td>
 			<td align=center width=400px>
 				<center>
-					<th>
-					EVS-D
-					</th>
-				</center>
+			<th>
+				EVS-D
+			</th>
+			</center>
 			</td>
 			<td align=center width=400px>
 				<center>
-					<th>
-						EVS-LR
-					</th>
-				</center>
+			<th>
+				EVS-LR
+			</th>
+			</center>
 			</td>
 		</tr>
 	</table>
