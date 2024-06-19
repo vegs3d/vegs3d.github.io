@@ -1,123 +1,177 @@
 <style type="text/css">
 	body {
-		font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
-		font-weight:300;
-		font-size:18px;
+		font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+		font-weight: 300;
+		font-size: 20px;
 		margin-left: auto;
 		margin-right: auto;
 		width: 1200px;
 	}
-	
+
 	h1 {
-		font-size:32px;
-		font-weight:300;
+		font-size: 32px;
+		font-weight: 300;
 	}
-	
+
 	.disclaimerbox {
-		background-color: #eee;		
+		background-color: #eee;
 		border: 1px solid #eeeeee;
-		border-radius: 10px ;
-		-moz-border-radius: 10px ;
-		-webkit-border-radius: 10px ;
+		border-radius: 10px;
+		-moz-border-radius: 10px;
+		-webkit-border-radius: 10px;
 		padding: 20px;
 	}
 
 	video.header-vid {
 		height: 140px;
 		border: 1px solid black;
-		border-radius: 10px ;
-		-moz-border-radius: 10px ;
-		-webkit-border-radius: 10px ;
+		border-radius: 10px;
+		-moz-border-radius: 10px;
+		-webkit-border-radius: 10px;
 	}
-	
+
 	img.header-img {
 		height: 140px;
 		border: 1px solid black;
-		border-radius: 10px ;
-		-moz-border-radius: 10px ;
-		-webkit-border-radius: 10px ;
+		border-radius: 10px;
+		-moz-border-radius: 10px;
+		-webkit-border-radius: 10px;
 	}
-	
+
 	img.rounded {
 		border: 1px solid #eeeeee;
-		border-radius: 10px ;
-		-moz-border-radius: 10px ;
-		-webkit-border-radius: 10px ;
+		border-radius: 10px;
+		-moz-border-radius: 10px;
+		-webkit-border-radius: 10px;
 	}
-	
-	a:link,a:visited
-	{
+
+	a:link,
+	a:visited {
 		color: #1367a7;
 		text-decoration: none;
 	}
+
 	a:hover {
 		color: #208799;
 	}
-	
+
 	td.dl-link {
 		height: 160px;
 		text-align: center;
 		font-size: 22px;
 	}
-	
-	.layered-paper-big { /* modified from: http://css-tricks.com/snippets/css/layered-paper/ */
+
+	.layered-paper-big {
+		/* modified from: http://css-tricks.com/snippets/css/layered-paper/ */
 		box-shadow:
-		0px 0px 1px 1px rgba(0,0,0,0.35), /* The top layer shadow */
-		5px 5px 0 0px #fff, /* The second layer */
-		5px 5px 1px 1px rgba(0,0,0,0.35), /* The second layer shadow */
-		10px 10px 0 0px #fff, /* The third layer */
-		10px 10px 1px 1px rgba(0,0,0,0.35), /* The third layer shadow */
-		15px 15px 0 0px #fff, /* The fourth layer */
-		15px 15px 1px 1px rgba(0,0,0,0.35), /* The fourth layer shadow */
-		20px 20px 0 0px #fff, /* The fifth layer */
-		20px 20px 1px 1px rgba(0,0,0,0.35), /* The fifth layer shadow */
-		25px 25px 0 0px #fff, /* The fifth layer */
-		25px 25px 1px 1px rgba(0,0,0,0.35); /* The fifth layer shadow */
+			0px 0px 1px 1px rgba(0, 0, 0, 0.35),
+			/* The top layer shadow */
+			5px 5px 0 0px #fff,
+			/* The second layer */
+			5px 5px 1px 1px rgba(0, 0, 0, 0.35),
+			/* The second layer shadow */
+			10px 10px 0 0px #fff,
+			/* The third layer */
+			10px 10px 1px 1px rgba(0, 0, 0, 0.35),
+			/* The third layer shadow */
+			15px 15px 0 0px #fff,
+			/* The fourth layer */
+			15px 15px 1px 1px rgba(0, 0, 0, 0.35),
+			/* The fourth layer shadow */
+			20px 20px 0 0px #fff,
+			/* The fifth layer */
+			20px 20px 1px 1px rgba(0, 0, 0, 0.35),
+			/* The fifth layer shadow */
+			25px 25px 0 0px #fff,
+			/* The fifth layer */
+			25px 25px 1px 1px rgba(0, 0, 0, 0.35);
+		/* The fifth layer shadow */
 		margin-left: 10px;
 		margin-right: 45px;
 	}
 
-	.paper-big { /* modified from: http://css-tricks.com/snippets/css/layered-paper/ */
+	.paper-big {
+		/* modified from: http://css-tricks.com/snippets/css/layered-paper/ */
 		box-shadow:
-		0px 0px 1px 1px rgba(0,0,0,0.35); /* The top layer shadow */
+			0px 0px 1px 1px rgba(0, 0, 0, 0.35);
+		/* The top layer shadow */
 
 		margin-left: 10px;
 		margin-right: 45px;
 	}
 
 
-	.layered-paper { /* modified from: http://css-tricks.com/snippets/css/layered-paper/ */
+	.layered-paper {
+		/* modified from: http://css-tricks.com/snippets/css/layered-paper/ */
 		box-shadow:
-		0px 0px 1px 1px rgba(0,0,0,0.35), /* The top layer shadow */
-		5px 5px 0 0px #fff, /* The second layer */
-		5px 5px 1px 1px rgba(0,0,0,0.35), /* The second layer shadow */
-		10px 10px 0 0px #fff, /* The third layer */
-		10px 10px 1px 1px rgba(0,0,0,0.35); /* The third layer shadow */
+			0px 0px 1px 1px rgba(0, 0, 0, 0.35),
+			/* The top layer shadow */
+			5px 5px 0 0px #fff,
+			/* The second layer */
+			5px 5px 1px 1px rgba(0, 0, 0, 0.35),
+			/* The second layer shadow */
+			10px 10px 0 0px #fff,
+			/* The third layer */
+			10px 10px 1px 1px rgba(0, 0, 0, 0.35);
+		/* The third layer shadow */
 		margin-top: 5px;
 		margin-left: 10px;
 		margin-right: 30px;
 		margin-bottom: 5px;
 	}
-	
+
 	.vert-cent {
 		position: relative;
 		top: 50%;
 		transform: translateY(-50%);
 	}
-	
-	hr
-	{
+
+	hr {
 		border: 0;
 		height: 1.5px;
 		background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1.0), rgba(0, 0, 0, 0));
 	}
+
+	/* emjay added (start) */	
+	.checkmark-list {
+		list-style-type: none; /* Remove default bullets */
+		font-size:17px;
+		padding-left: 0; /* Remove default padding */
+		margin-left: 0; /* Remove default margin */
+	}
+	.checkmark-list > li:before {
+		content: '\2713'; /* Unicode character for checkmark */
+		margin-right: 8px;
+		color: black; /* Optional: change checkmark color */
+	}
+	.checkmark-list ul {
+		padding-left: 0; /* Remove default padding from nested lists */		
+		margin-left: 40px; /* Indent nested lists */
+		list-style-type: none; /* Remove bullets from nested lists */
+	}
+	.checkmark-list ul > li:before {
+		content: '\2713'; /* Unicode character for checkmark */
+		margin-right: 8px;
+		color: black; /* Optional: change checkmark color for nested items */
+	}
+	.spaced-heading {
+		margin-top: 20px; /* Adjust the value to increase or decrease space */
+	}
+	.figure-cell {
+		padding-bottom: 40px; /* Adjust the value to increase or decrease space */
+	}
+	/* emjay added (end) */	
+    
 </style>
 
 <html>
+
 <head>
 	<title>VEGS: View Extrapolation of Urban Scenes in 3D Gaussian Splatting using Learned Priors</title>
-	<meta property="og:image" content="./resources/teaser.png"/> <!-- Facebook automatically scrapes this. Go to https://developers.facebook.com/tools/debug/ if you update and want to force Facebook to rescrape. -->
-	<meta property="og:title" content="VEGS: View Extrapolation of Urban Scenes in 3D Gaussian Splatting using Learned Priors" />
+	<meta property="og:image" content="./resources/teaser.png" />
+	<!-- Facebook automatically scrapes this. Go to https://developers.facebook.com/tools/debug/ if you update and want to force Facebook to rescrape. -->
+	<meta property="og:title"
+		content="VEGS: View Extrapolation of Urban Scenes in 3D Gaussian Splatting using Learned Priors" />
 	<meta property="og:description" content="Neural rendering-based urban scene reconstruction methods commonly rely on images collected from driving vehicles with cameras facing and moving forward. 
 											 Although these methods can successfully synthesize from views similar to training camera trajectory, directing the novel view outside the training camera distribution does not guarantee on-par performance. 
 											 In this paper, we tackle the Extrapolated View Synthesis (EVS) problem by evaluating the reconstructions on views such as looking left, right or downwards with respect to training camera distributions. 
@@ -126,32 +180,31 @@
 											 To the best of our knowledge, we are the first to address the EVS problem in urban scene reconstruction.
 " />
 
-  
-  <link rel="stylesheet" href="./definitive-image-comparison-slider-master/src/dics.css">
-  <script src="./definitive-image-comparison-slider-master/src/dics.js"></script>
 
-  
+	<link rel="stylesheet" href="./definitive-image-comparison-slider-master/src/dics.css">
+	<script src="./definitive-image-comparison-slider-master/src/dics.js"></script>
+
+
 	<script>
-    document.addEventListener('DOMContentLoaded', domReady);
-    
-    function domReady() {
-    
-      var b = document.querySelectorAll('.b-dics');
-      b.forEach(element => 
-        new Dics({
-          container: element,
-          textPosition: 'top'
-        })
-      );
+		document.addEventListener('DOMContentLoaded', domReady);
 
-    }
-  
-    
+		function domReady() {
 
-    
+			var b = document.querySelectorAll('.b-dics');
+			b.forEach(element =>
+				new Dics({
+					container: element,
+					textPosition: 'top'
+				})
+			);
+
+		}
 	</script>
-  
+
 </head>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
 
 <body>
 	<br>
@@ -162,28 +215,30 @@
 				<tr>
 					<td align=center width=300px>
 						<center>
-							<span style="font-size:36px">VEGS: View Extrapolation of Urban Scenes in 3D Gaussian Splatting using Learned Priors</span>
+							<span style="font-size:36px">VEGS: View Extrapolation of Urban Scenes in 3D Gaussian
+								Splatting using Learned Priors</span>
 						</center>
 					</td>
 				</tr>
-        <tr>
-          <td align=center width=300px>
+				<tr>
+					<td align=center width=300px>
 						<center>
 							<span style="font-size:24px">ECCV 24</span>
 						</center>
 					</td>
-        </tr>
+				</tr>
 			</table>
 		</table>
-		
+
 		<br>
-		
+
 		<table align=center width=1200px>
 			<table align=center width=900px>
 				<tr>
 					<td align=center width=300px>
 						<center>
-							<span style="font-size:24px"><a href="https://deepshwang.github.io/">Sungwon Hwang*</a></span>
+							<span style="font-size:24px"><a href="https://deepshwang.github.io/">Sungwon
+									Hwang*</a></span>
 							<br>
 							<span style="font-size:14px">KAIST</span>
 						</center>
@@ -215,7 +270,8 @@
 					</td>
 					<td align=center width=300px>
 						<center>
-							<span style="font-size:24px"><a href="https://sites.google.com/site/jaegulchoo">Jaegul Choo</a></span>
+							<span style="font-size:24px"><a href="https://sites.google.com/site/jaegulchoo">Jaegul
+									Choo</a></span>
 							<br>
 							<span style="font-size:14px">KAIST</span>
 						</center>
@@ -236,18 +292,18 @@
 
 	<center>
 		<table>
-		  <tr>
-			<td align=center> <span style="font-size:18pt">
-			  <center>
-				<a href="https://arxiv.org/abs/2103.03231">|  ArXiv  |</a>
-			  </center>
-			</td>
-			<td align=center> <span style="font-size:18pt">
-			  <center>
-				<a href="https://youtu.be/u9HqKGqvJhQ?t=5843">|  Code  |</a>
-			  </center>
-			</td>
-		  </tr>
+			<tr>
+				<td align=center> <span style="font-size:18pt">
+						<center>
+							<a href="https://arxiv.org/abs/2103.03231">| ArXiv |</a>
+						</center>
+				</td>
+				<td align=center> <span style="font-size:18pt">
+						<center>
+							<a href="https://youtu.be/u9HqKGqvJhQ?t=5843">| Code |</a>
+						</center>
+				</td>
+			</tr>
 		</table>
 	</center>
 
@@ -261,74 +317,198 @@
 						<video controls autoplay muted loop>
 							<source src="./resources/videos/final_evs_demo_v4.mp4" type="video/mp4">
 							Your browser does not support the video tag.
-						  </video>
+						</video>
 					</center>
 				</td>
 			</tr>
 		</table>
 	</center>
-	<!-- <center>
-		<table align=center width=1200px>
-			<tr>
-				<td width=400px>
-					<center>
-						<video controls autoplay muted loop>
-							<source src="./resources/videos/sanmiguel_donerf16_rotate_1.mp4" type="video/mp4">
-							Your browser does not support the video tag.
-						  </video>
-					</center>
-				</td>
-				<td width=400px>
-					<center>
-						<video controls autoplay muted loop>
-							<source src="./resources/videos/classroom_donerf16_pan_1.mp4" type="video/mp4">
-							Your browser does not support the video tag.
-						  </video>
-					</center>
-				</td>
-				<td width=400px>
-					<center>
-						<video controls autoplay muted loop>
-							<source src="./resources/videos/pavillon_donerf16_rotate_1.mp4" type="video/mp4">
-							Your browser does not support the video tag.
-						  </video>
-					</center>
-				</td>
-			</tr>
-		</table>
-	</center> -->
 
 	<hr>
-
-
-
 	<table align=center width=1200px>
-		<center><h1>Abstract</h1></center>
+		<center>
+			<h1>Paper Summary at a Glance</h1>						
+		</center>
+		<h2 style="color:dimgrey;">Problem Statement</h2>
 		<tr>
+			<!-- <td align=center width=1200px> -->
 			<td>
-				Neural rendering-based urban scene reconstruction methods commonly rely on images collected from driving vehicles with cameras facing and moving forward. 
-				Although these methods can successfully synthesize from views similar to training camera trajectory, directing the novel view outside the training camera distribution does not guarantee on-par performance. 
-				In this paper, we tackle the Extrapolated View Synthesis (EVS) problem by evaluating the reconstructions on views such as looking left, right or downwards with respect to training camera distributions. 
-				To improve rendering quality for EVS, we initialize our model by constructing dense LiDAR map, and propose to leverage prior scene knowledge such as surface normal estimator and large-scale diffusion model. 
-				Qualitative and quantitative comparisons demonstrate the effectiveness of our methods on EVS. 
-				To the best of our knowledge, we are the first to address the EVS problem in urban scene reconstruction.
+				<center>
+					<td><img class="round" style="width:1200px" src="./resources/teaser_v7.png" /></td>
+				</center>
 			</td>
 		</tr>
-	</table>
-	<br>
-	<table align=center width=1200px>
+	<!-- </table> -->
+	<!-- <br> -->
+	<!-- <table align=center width=1200px> -->
+		<!-- <center>
+			<h1>Overall Pipeline</h1>
+		</center> -->
 		<tr>
-			<td align=center width=1200px>
+			<td>
 				<center>
-					<td><img class="round" style="width:1200px" src="./resources/pipeline_v3.png"/></td>
+				<td>		
+					<br>			
+					<ul class="checkmark-list">
+						<li>Previous urban scene reconstruction methods commonly rely on images collected from driving vehicles with cameras facing and moving forward.</li>
+						<li>These methods can successfully synthesize from views similar to training camera trajectory.</li>
+						<li>However, directing the novel view outside the training camera distribution does not guarantee on-par performance.</li>
+						<li>We tackle the Extrapolated View Synthesis (EVS) problem on views such as looking left, right or downwards with respect to train distributions.</li>
+						<li>(a) Illustration of Extrapolated View Synthesis (EVS) problem in urban scenes reconstructed with forward-facing cameras. </li>
+						<li>(b) Qualitative comparison on EVS to baselines. Rendering quality on conventional test cameras is not necessarily preserved on EVS.</li>
+					</ul>					
+					<!-- Neural rendering-based urban scene reconstruction methods commonly rely on images collected from driving vehicles with cameras facing and moving forward.
+					Although these methods can successfully synthesize from views similar to training camera trajectory,
+					directing the novel view outside the training camera distribution does not guarantee on-par performance.
+					In this paper, we tackle the Extrapolated View Synthesis (EVS) problem by evaluating the reconstructions
+					on views such as looking left, right or downwards with respect to training camera distributions.					
+					(a) Illustration of Extrapolated View Synthesis (EVS) problem in urban scenes
+					reconstructed with forward-facing cameras. In contrast to conventional test cameras
+					similar to training camera poses, we evaluate view synthesis on cameras distant from
+					training camera distribution. (b) Qualitative comparison on EVS to baselines. Render-
+					ing quality on conventional test cameras is not necessarily preserved on EVS. -->
+				</td>
 				</center>
 			</td>
 		</tr>
 	</table>
+
 	<br>
+	<table align=center width=1200px>
+		<!-- <center> -->
+			<h2 style="color:dimgrey;">Overall Pipeline</h2>
+		<!-- </center> -->
+		<tr>
+			<!-- <td align=center width=1200px> -->
+			<td>
+				<center>
+					<td><img class="round" style="width:1200px" src="./resources/pipeline_v3.png" /></td>
+				</center>
+			</td>
+		</tr>
+	<!-- </table> -->
+	<!-- <br> -->
+	<!-- <table align=center width=1200px> -->
+		<!-- <center>
+			<h1>Overall Pipeline</h1>
+		</center> -->
+				
+		<tr>
+			<td>
+				<center>
+				<td>
+					<ul class="checkmark-list">
+						<li>We initialize gaussian means using dense LiDAR map and point cloud from SFM.</li>
+						<li>To improve rendering quality for EVS, prior scene knowledge, such as surface normal estimation and large-scale diffusion models, is leveraged.</li>
+						<li>To utilize surface normal prior, we propose Covariance Guidance Loss.									
+							<ul class="checkmark-list">
+								<li>\(\mathcal{L}_{\text{cov}} = \lambda_{\text{axis}} \mathcal{L}_{\text{axis}} + (1 - \lambda_{\text{axis}}) \mathcal{L}_{\text{scale}}\)</li>
+								<li>\(L_{axis}\) is minimized when any of the three covariance axes aligns with the normal vector. </li>
+								<li>\(L_{scale}\) is minimized when scale of the axis aligned to normal is minimized, inducing the covariance to mimic an underlying surface. </li>
+								<!-- <li>\(\mathcal{L}_{\text{scale}} = \sum\limits_{i\in \{\text{0,1,2}\}} {\left|\tilde{\mathbf{S}}[i]\left(\tilde{\mathbf{Q}}[:, i] \cdot G(\mathcal{I}) \right)\right|}/3,\)</li>
+								<li>\(\mathcal{L}_{\text{axis}} = \sum\limits_{i\in \{\text{0,1,2}\}} {|\tilde{\mathbf{Q}}[:, i] \cdot G(\mathcal{I})|}/3,\)</li> -->
+							</ul>
+						</li>
+						<li>To utilize large-scale diffusion model, we exploit the score distillation.
+							<ul class=""checkmark-list">
+								<li>\(\nabla_{M} \mathcal{L}_{\text{score}} = - \textbf{s}_{\theta}(\hat{\mathcal{I}}_{\tau}, \tau) \approx \nabla_{\textbf{x}} \text{log} p(\textbf{x})\)</li>
+								<li>\(\hat{\mathcal{I}_{\tau}} = \sqrt{\bar{\alpha}_{\tau}} \hat{\mathcal{I}} + (1 - \bar{\alpha}_{\tau})\epsilon\), where \(\hat{\mathcal{I}}\) is a rendering from our model \(M\) on EVS.</li>
+							</ul>
+						</li>
+						<li>To the best of our knowledge, we are the first to address the EVS problem in urban scene reconstruction.</li>						
+					</ul>
+
+					<!-- To improve rendering quality for EVS, we initialize our model by constructing dense LiDAR map, and
+					propose to leverage prior scene knowledge such as surface normal estimator and large-scale diffusion
+					model.
+					\(\nabla_{M} \mathcal{L}_{\text{score}} = - \textbf{s}_{\theta}(\hat{\mathcal{I}}_{\tau}, \tau) \approx \nabla_{\textbf{x}} \text{log} p(\textbf{x})\)
+					where \(\hat{\mathcal{I}_{\tau}} = \sqrt{\bar{\alpha}_{\tau}} \hat{\mathcal{I}} + (1 - \bar{\alpha}_{\tau})\epsilon\) and \(\hat{\mathcal{I}}\) is a rendering from our model \(M\) on EVS. -->
+					<!-- Qualitative and quantitative comparisons demonstrate the effectiveness of our methods on EVS. -->
+					
+				</td>
+				</center>
+			</td>
+		</tr>
+	</table>
+
 	<hr>
 	<table align=center width=1200px>
+		<!-- <center><h1><b>The Lazy Covariance Optimization Problem</b></h1></center> -->
+		<center>
+			<h1>Covariance Guidance with Surface Normal Prior</h1>			
+		</center>				
+		<tr>
+			<td>
+				<center>
+					<td class="figure-cell"><img class="round" style="width:1200px" src="./resources/normal_prior_merge_v6.1.png" /></td>
+				</center>
+			</td>
+		</tr>
+		<tr>
+			<td>				
+				<td class="spaced-heading"><h2 style="color:dimgrey;">The Lazy Covariance Optimization Problem</h2></td>
+			</td>			
+		</tr>		
+		<tr> </tr>
+		<tr>
+			<td>
+				<center>
+				<td>
+					<ul class="checkmark-list">
+						<li>The shape and orientation of learned covariances tend to over-fit to a certain viewing angle.</li>
+						<li>We hypothesize that the covariance is trained to cover the the frustum of a training pixel with a minimal optimization effort.</li>
+						<li>As a result, these covariances are prone to produce unwanted cavity on an underlying scene surface.</li>
+						<li>The right-most ellipsoid in (a) shows such a case.</li>
+					</ul>
+				</td>
+				</center>
+			</td>
+		</tr>
+		<tr>
+			<td>				
+				<td><h2 style="color:dimgrey;">Covariance Guidance Loss</h2></td>
+			</td>			
+		</tr>
+		<tr>
+			<td>
+				<center>
+				<td>					
+					<ul class="checkmark-list">
+						<li>Our key idea is to guide the orientation and shape of covariances to make them behave like the underlying scene surface.</li>
+						<li>(a) Illustration on the working mechanism of \(L_{cov}\) =\(L_{axis}\) + \(L_{scale}\).
+							<ul>
+								<li>\(L_{axis}\) aligns covariance axes to a surface normal vector.</li>
+								<li>\(L_{scale}\) minimizes the scale along the covariance axis aligned with surface normal</li>
+							</ul>
+						</li>						
+						<li>(b) Visualizing \(L_{axis}\) for different alignment between normal and covariances.
+							<ul>
+								<li>\(L_{axis}\) is minimized when an axis aligns with the normal.</li>							
+							</ul>							
+						</li>
+						
+					</ul>
+
+					<!-- The shape and orientation of learned covariances tend to over-fit to a certain viewing angle,
+					which we hypothesize that the covariance is trained to cover the the frustum of a training pixel with a
+					minimal optimization effort.
+					As a result, these covariances are prone to produce unwanted cavity on an underlying scene surface,
+					which is revealed when viewed from unobserved angles.
+					Our key idea is to guide the orientation and shape of covariances to make them behave like the
+					underlying scene surface.
+					
+					(b) Visualizing \(L_{axis}\) for different alignment between normal and covariances.
+					\(L_{axis}\) is minimized when an axis aligns with the normal. See supplements for detailed derivation. -->
+				</td>
+				</center>
+			</td>
+		</tr>
+	</table>
+
+	<!-- <hr> -->
+	<!-- <table align=center width=1200px>
 		<center><h1>Real-Time View Synthesis</h1></center>
+		<h2 class="grey-heading_nerf">Relighting</h2>
 		<tr>
 			<td>
 				Due to our novel depth oracle sampling scheme, DONeRF achieves quality similar to <a href="https://www.matthewtancik.com/nerf">NeRF</a>, which uses a total of 256 samples.
@@ -337,170 +517,167 @@
 			</td>
 		</tr>
 	</table>
+	<br> -->
+
 	<br>
-  
-  <br>
-	<table align=center width=1200px>
+	<h2 style="color:dimgrey;">Qualitative Ablation Results on \(L_{cov}\)</h2>
+	<table align=center width=400px>
 		<tr>
 			<td align=center width=400px>
 				<center>
-					<td>
-            <div class="b-dics" style="width: 400px">
-              <!-- 44 -->
-              <img src="./resources/sanmiguel_donerf4.png" width=400px  alt="DONeRF">
-              <img src="./resources/sanmiguel_gt.png" width=400px  alt="Target">
-              <img src="./resources/sanmiguel_nerf.png" width=400px  alt="NeRF">
-            </div>
-					</td>
+			<td>
+				<div class="b-dics" style="width: 400px">
+					<!-- 44 -->
+					<!-- <img src="./resources/1_diffusion_only_normal_ablation.png" width=400px  alt="Diffusion Only"> -->
+					<img src="./resources/1_free_diffusion_only_normal_ablation.png" width=400px alt="w/o Lcov">
+					<img src="./resources/1_free_ours_normal_ablation.png" width=400px alt="VEGS">
+				</div>
+			</td>
+			</center>
+			</td>
+			<!-- </tr>
+		<tr> -->
+			<td align=center width=400px>
+				<center>
+			<td>
+				<div class="b-dics" style="width: 400px">
+					<!-- 39 -->
+					<img src="./resources/2_free_diffonly_0000008926_Rx0_Rz-60_tz0.png" width=400px alt="w/o Lcov">
+					<img src="./resources/2_free_ours_0000008926_Rx0_Rz-60_tz0.png" width=400px alt="VEGS">
+				</div>
+				</div>
+			</td>
+			</center>
+			</td>
+			<!-- </tr>
+		<tr> -->
+			<td align=center width=400px>
+				<center>
+			<td>
+				<div class="b-dics" style="width: 400px">
+					<!-- 57 -->
+					<img src="./resources/3_free_diffonly_0000009646_Rx-16_Rz0_tz1.6.png" width=400px alt="w/o Lcov">
+					<img src="./resources/3_free_ours_0000009646_Rx-16_Rz0_tz1.6.png" width=400px alt="VEGS">
+				</div>
+			</td>
+			</center>
+			</td>
+		</tr>
+	</table>
+	<br>
+	<hr>
+
+	<table align=center width=1200px>
+		<center>
+			<h1>Comparison to Baseline</h1>
+		</center>
+		<tr>
+			<td>
+				Qualitative comparison on KITTI-360 for extrapolated view synthesis.
+				EVS-D and EVS-LR refers to extrapolated views facing downwards and left/right, respectively.
+			</td>
+		</tr>
+	</table>
+	<br>
+
+	<table align=center width=1200px>
+
+		<tr>
+			<td align=center width=400px>
+				<center>
+			<td>
+				<div class="b-dics" style="width: 400px">
+					<!-- 44 -->
+					<img src="./resources/cp_down1_mars_0000004230_Rx_3A -12_7C Rz_3A 0 _7C tz_3A 0.12.png" width=400px
+						alt="MARS">
+					<img src="./resources/cp_down1_bn_00325_frame_00004230.0.png" width=400px alt="BlockNeRF++">
+					<img src="./resources/cp_down1_3dgs_0000004230_Rx-12_Rz0_tz1.2000000000000002.png" width=400px
+						alt="3DGS">
+					<img src="./resources/cp_down1_ours_0000004230_Rx-12_Rz0_tz1.2000000000000002.png" width=400px
+						alt="VEGS">
+				</div>
+			</td>
+			</center>
+			</td>
+
+			<td align=center width=400px>
+				<center>
+			<td>
+				<div class="b-dics" style="width: 400px">
+					<!-- 44 -->
+					<img src="./resources/cp_down2_mars_0000003622_Rx_3A -16_7C Rz_3A 0 _7C tz_3A 0.16.png" width=400px
+						alt="MARS">
+					<img src="./resources/cp_down2_01957_frame_00003622.0.png" width=400px alt="BlockNeRF++">
+					<img src="./resources/cp_down2_3dgs_2013_05_28_drive_0006_sync_static_0000003251_0000003634-0000003622_Rx-16_Rz0_tz1.6.png" width=400px
+						alt="3DGS">
+					<img src="./resources/cp_down2_ours_2013_05_28_drive_0006_sync_static_0000003251_0000003634-0000003622_Rx-16_Rz0_tz1.6.png" width=400px
+						alt="VEGS">
+				</div>
+			</td>
+			</center>
+			</td>
+			
+			<td align=center width=400px>
+				<center>
+			<td>
+				<div class="b-dics" style="width: 400px">
+					<!-- 39 -->
+					<img src="./resources/cp_lr2_mars_0000003497_Rx_3A 0_7C Rz_3A 60 _7C tz_3A 0.png" width=400px
+						alt="MARS">
+					<img src="./resources/cp_lr2_bn_00312_frame_00003497.0.png" width=400px alt="BlockNeRF++">
+					<img src="./resources/cp_lr2_splat_0000003497_Rx0_Rz-60_tz0_440.png" width=400px
+						alt="3DGS">
+					<img src="./resources/cp_lr2_ours_0000003497_Rx0_Rz-60_tz0.png" width=400px
+						alt="VEGS">
+				</div>
+				</div>
+			</td>
+			</center>
+			</td>
+			
+			<!-- <td align=center width=400px>
+				<center>
+			<td>
+				<div class="b-dics" style="width: 400px">					
+					<img src="./resources/cp_lr3_mars_0000002173_Rx_3A 0_7C Rz_3A 30 _7C tz_3A 0.png" width=400px
+						alt="MARS">
+					<img src="./resources/cp_lr3_00310_frame_00002173.0.png" width=400px alt="BlockNeRF++">
+					<img src="./resources/cp_lr3_3dgs_2013_05_28_drive_0009_syncstatic0000002117_0000002353_0000002173_Rx0_Rz-30_tz0.png" width=400px
+						alt="3DGS">
+					<img src="./resources/cp_lr3_ours_2013_05_28_drive_0009_syncstatic0000002117_0000002353_0000002173_Rx0_Rz-30_tz0.png" width=400px
+						alt="VEGS">
+				</div>
+			</td>
+			</center>
+			</td> -->
+		</tr>
+		<tr>
+			<td align=center width=400px>
+				<center>
+					<th>
+					EVS-D
+					</th>
 				</center>
 			</td>
 			<td align=center width=400px>
 				<center>
-					<td>
-						<div class="b-dics" style="width: 400px">
-              <!-- 39 -->
-              <img src="./resources/classroom_donerf4.png" width=400px  alt="DONeRF">
-              <img src="./resources/classroom_gt.png" width=400px  alt="Target">
-              <img src="./resources/classroom_nerf.png" width=400px  alt="NeRF">
-            </div>
-						</div>
-					</td>
+					<th>
+					EVS-D
+					</th>
 				</center>
 			</td>
 			<td align=center width=400px>
 				<center>
-					<td>
-						<div class="b-dics" style="width: 400px">
-              <!-- 57 -->
-              <img src="./resources/forest_donerf4.png" width=400px  alt="DONeRF">
-              <img src="./resources/forest_gt.png" width=400px  alt="Target">
-              <img src="./resources/forest_nerf.png" width=400px  alt="NeRF">
-            </div>
-					</td>
+					<th>
+						EVS-LR
+					</th>
 				</center>
 			</td>
 		</tr>
 	</table>
-  <br>
-  <hr>
+	<br>
 
-  <table align=center width=1200px>
-	<center><h1>Depth Oracle Predicition</h1></center>
-	<tr>
-		<td>
-			Our Depth Oracle predicts multiple potential sampling candidates along each ray by discretizing the space along rays and predicting sampling probabilities along rays.
-			The 3 color channels encode the 3 highest probabilities along the ray - gray values illustrate that there is likely only a single surface that should be sampled, while colorful values indicate that samples need to be spread out in depth.
-			Even a relatively coarse depth prediction is sufficient for DONeRF to place samples efficiently.
-		</td>
-	</tr>
-</table>
-<br>
-
-  <table align=center width=1200px>
-	
-	<tr>
-		<td align=center width=400px>
-			<center>
-				<td>
-		<div class="b-dics" style="width: 400px">
-		  <!-- 44 -->
-		  <img src="./resources/sanmiguel_depth_donerf.png" width=400px  alt="DONeRF">
-		  <img src="./resources/sanmiguel_depth_target.png" width=400px  alt="Target">
-		</div>
-				</td>
-			</center>
-		</td>
-		<td align=center width=400px>
-			<center>
-				<td>
-					<div class="b-dics" style="width: 400px">
-		  <!-- 39 -->
-		  <img src="./resources/classroom_depth_donerf.png" width=400px  alt="DONeRF">
-		  <img src="./resources/classroom_depth_target.png" width=400px  alt="Target">
-		</div>
-					</div>
-				</td>
-			</center>
-		</td>
-		<td align=center width=400px>
-			<center>
-				<td>
-					<div class="b-dics" style="width: 400px">
-		  <!-- 57 -->
-		  <img src="./resources/forest_depth_donerf.png" width=400px  alt="DONeRF">
-		  <img src="./resources/forest_depth_target.png" width=400px  alt="Target">
-		</div>
-				</td>
-			</center>
-		</td>
-	</tr>
-</table>
-<br>
-
-<hr>
-
-<table align=center width=1200px>
-	<center><h1><a href="https://research.nvidia.com/publication/2020-07_FLIP">FLIP</a> Comparison</h1></center>
-	<tr>
-		<td>
-			We use the <a href="https://research.nvidia.com/publication/2020-07_FLIP">FLIP</a> error estimator to produce error maps that model how likely humans would perceive errors when "flipping" between an image and the target output. 
-			DONeRF shows similar or better results at significantly lower performance requirements.
-		</td>
-	</tr>
-</table>
-<br>
-
-<table align=center width=1200px>
-	<tr>
-		<td align=center width=400px>
-			<center>
-				<td>
-		<div class="b-dics" style="width: 400px">
-		  <!-- 44 -->
-		  <img src="./resources/sanmiguel_donerf_flip.png" width=400px  alt="DONeRF">
-		  <img src="./resources/sanmiguel_nerf_flip.png" width=400px  alt="NeRF">
-		</div>
-				</td>
-			</center>
-		</td>
-		<td align=center width=400px>
-			<center>
-				<td>
-					<div class="b-dics" style="width: 400px">
-		  <!-- 39 -->
-		  <img src="./resources/classroom_donerf_flip.png" width=400px  alt="DONeRF">
-		  <img src="./resources/classroom_nerf_flip.png" width=400px  alt="NeRF">
-		</div>
-					</div>
-				</td>
-			</center>
-		</td>
-		<td align=center width=400px>
-			<center>
-				<td>
-					<div class="b-dics" style="width: 400px">
-		  <!-- 57 -->
-		  <img src="./resources/forest_donerf_flip.png" width=400px  alt="DONeRF">
-		  <img src="./resources/forest_nerf_flip.png" width=400px  alt="NeRF">
-		</div>
-				</td>
-			</center>
-		</td>
-	</tr>
-</table>
-
-<br>
-<hr>
-<table align=center width=1200px>
-	<center><h1>Video Summary</h1></center>
-	<tr>
-		<td>
-			<iframe width="1200" height="675" src="https://www.youtube.com/embed/6UE1dMUjN_E" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-		</td>
-	</tr>
-</table>
-
-<!--	
+	<!--	
 	<table align=center width=1200px>
 		<br>
 		<tr>
@@ -551,56 +728,12 @@
 	</table>
 	-->
 	<br>
-	<hr>
-	<table align=center width=450px>
-		<center><h1>Paper and Supplementary Material</h1></center>
-		<tr>
-			<td><a href="https://diglib.eg.org/handle/10.1111/cgf14340"><img class="layered-paper-big" style="height:175px" src="./resources/paper.png"/></a></td>
-			<td><span style="font-size:14pt">T. Neff, P. Stadlbauer, M. Parger, A. Kurz, J. H. Mueller, C. R. A. Chaitanya, A. Kaplanyan, M. Steinberger<br>
-				<b>DONeRF: Towards Real-Time Rendering of Compact Neural Radiance Fields using Depth Oracle Networks</b><br>				
-				(published in <a href="https://diglib.eg.org/handle/10.1111/cgf14340">Computer Graphics Forum (EGSR 2021)</a>)<br>
-				<!-- (<a href="./resources/camera-ready.pdf">camera ready</a>)<br> -->
-				<span style="font-size:4pt"><a href=""><br></a>
-				</span>
-			</td>
-		</tr>
-	</table>
-	<br>
-  
-<!--
+	<!--
   <img-comparison-slider>
     <img slot="before" src="./resources/method_diagram.png" />
     <img slot="after" src="./resources/teaser.png" />
   </img-comparison-slider>
 -->
-	<table align=center width=600px>
-		<tr>
-			<td><span style="font-size:14pt"><center>
-				<a href="./resources/bibtex.txt">[Bibtex]</a>
-			</center></td>
-		</tr>
-	</table>
-
-
-
-	<hr>
-	<br>
-
-	
-
-
-	<table align=center width=900px>
-		<tr>
-			<td width=400px>
-				<left>
-					<center><h1>Acknowledgements</h1></center>
-					This template was originally made by <a href="http://web.mit.edu/phillipi/">Phillip Isola</a> and <a href="http://richzhang.github.io/">Richard Zhang</a> for a <a href="http://richzhang.github.io/colorization/">colorful</a> ECCV project; the code can be found <a href="https://github.com/richzhang/webpage-template">here</a>.
-				</left>
-			</td>
-		</tr>
-	</table>
-
-<br>
 </body>
-</html>
 
+</html>
