@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VEGS: View Extrapolation of Urban Scenes in 3D Gaussian Splatting using Learned Priors</title>
+    <link rel="stylesheet" href="./src/style.css">
+    <link rel="icon" href="./assets/favicon.ico">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+</head>
+
+<body>
+    <section class="title">
+        <h1>VEGS</h1>
+        <p>View Extrapolation of Urban Scenes<br />in 3D Gaussian Splatting<br />using Learned Priors</p>
+    </section>
+    <section class="demo">
+        <div class="video-compare-container">
+            <div class="dem-name">
+                <span class="dem-left">3DGS</span>
+                <span class="dem-right">VEGS</span>
+            </div>
+            <video loop autoplay>
+                <source src="./assets/contents/vegs_-10_0_1.mp4">
+            </video>
+            <div class="divider"></div>
+            <div class="video-clipper">
+                <video loop autoplay class="clipped-video">
+                    <source src="./assets/contents/3dgs_-10_0_1.mp4">
+                </video>
+            </div>
+        </div>
+        
+        <div class="video-compare-container">
+            <div class="dem-name">
+                <span class="dem-left">3DGS + LiDAR</span>
+                <span class="dem-right">VEGS</span>
+            </div>
+            <video loop autoplay>
+                <source src="./assets/contents/vegs_-10_0_1.mp4">
+            </video>
+            <div class="divider"></div>
+            <div class="video-clipper">
+                <video loop autoplay class="clipped-video">
+                    <source src="./assets/contents/lidar_-10_0_1.mp4">
+                </video>
+            </div>
+        </div>
+        <p>Our method aligns and flattens Gaussian covariances to scene surfaces estimated from monocular normal prediction
+            network</p>
+    </section>
+    <section class="fourcuts">
+        <div class="fourvids">
+            <video loop autoplay>
+                <source src="./assets/contents/four-1_3_smalldynamic.mp4">
+            </video>
+            <video loop autoplay>
+                <source src="./assets/contents/four-2_5.mp4">
+            </video>
+            <video loop autoplay>
+                <source src="./assets/contents/four-3_2.mp4">
+            </video>
+            <video loop autoplay>
+                <source src="./assets/contents/four-4_.mp4">
+            </video>
+            <p>Our method jointly reconstructs static scene with dynamic objects such as cars.</p>
+        </div>
+    </section>
+
+
+
+    <script src="./src/app.js"></script>
+</body>
+
+</html>
