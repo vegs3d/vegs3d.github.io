@@ -131,6 +131,7 @@
 		border: 0;
 		height: 1.5px;
 		background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1.0), rgba(0, 0, 0, 0));
+		margin: 70px 0;
 	}
 
 	/* emjay added (start) */
@@ -203,6 +204,17 @@
 		font-style: normal;
 		font-variation-settings:
 			"wdth" 100;
+	}
+
+	.link-btn{
+		background-color: #222;
+		padding: 3px 20px;
+		border-radius: 50px;
+		margin-top: 10px;
+		color: white;
+	}
+	.link-btn:visited{
+		color: white;
 	}
 </style>
 
@@ -344,15 +356,15 @@
 
 	<center>
 		<table>
-			<tr>	
+			<tr style="height: 70px;">	
 				<td align=center> <span style="font-size:18pt">
 						<center>
-							<a href="https://arxiv.org/abs/2103.03231">| ArXiv |</a>
+							<a class="link-btn" href="https://arxiv.org/abs/2103.03231">ArXiv</a>
 						</center>
 				</td>
 				<td align=center> <span style="font-size:18pt">
 						<center>
-							<a href="https://youtu.be/u9HqKGqvJhQ?t=5843">| Code |</a>
+							<a class="link-btn" href="https://youtu.be/u9HqKGqvJhQ?t=5843">Code</a>
 						</center>
 				</td>
 			</tr>
@@ -362,9 +374,9 @@
 	<center>
 		<table align=center width=1200px>
 			<tr>
-				<td width=1200px>
+				<td width=1200px >
 					<center>
-						<video controls autoplay muted loop>
+						<video autoplay muted loop>
 							<source src="./resources/videos/final_evs_demo_v4.mp4" type="video/mp4">
 							Your browser does not support the video tag.
 						</video>
@@ -376,8 +388,8 @@
 	<center>
 		<table align=center width=1200px>
 			<tr>
-				<td align=center width=1200px>
-					<span style="font-size:16px"><b>Our method aligns and flattens Gaussian covariances to scene
+				<td align=center width=1200px style="height: 40px">
+					<span style="font-size:16px;"><b>Our method aligns and flattens Gaussian covariances to scene
 								surfaces estimated from monocular normal prediction network</b></span>
 				</td>
 			</tr>
@@ -413,7 +425,7 @@
 			<tr>
 				<td width=600px>
 					<center>
-						<video controls autoplay muted loop>
+						<video  autoplay muted loop>
 							<source src="./resources/videos/3_render_0_0_0_dynamic_small.mp4" type="video/mp4">
 							Your browser does not support the video tag.
 						</video>
@@ -421,7 +433,7 @@
 				</td>
 				<td width=600px>
 					<center>
-						<video controls autoplay muted loop>
+						<video autoplay muted loop>
 							<source src="./resources/videos/5_render_0_0_0_small.mp4" type="video/mp4">
 							Your browser does not support the video tag.
 						</video>
@@ -432,7 +444,7 @@
 			<tr>
 				<td width=600px>
 					<center>
-						<video controls autoplay muted loop>
+						<video autoplay muted loop>
 							<source src="./resources/videos/render_0_0_0_small.mp4" type="video/mp4">
 							Your browser does not support the video tag.
 						</video>
@@ -440,7 +452,7 @@
 				</td>
 				<td width=600px>
 					<center>
-						<video controls autoplay muted loop>
+						<video autoplay muted loop>
 							<source src="./resources/videos/2_render_0_0_0_small.mp4" type="video/mp4">
 							Your browser does not support the video tag.
 						</video>
@@ -452,7 +464,7 @@
 	<center>
 		<table align=center width=1200px>
 			<tr>
-				<td align=center width=1200px>
+				<td align=center width=1200px style="height: 40px">
 					<span style="font-size:16px"><b>Our method jointly reconstructs static scene with dynamic objects
 							such as cars.</b></span>
 				</td>
