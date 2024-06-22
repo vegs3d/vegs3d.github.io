@@ -12,61 +12,63 @@
 
 <body>
     <section class="title">
-        <h1>VEGS</h1>
-        <p>View Extrapolation of Urban Scenes<br />in 3D Gaussian Splatting<br />using Learned Priors</p>
+        <div class="subtitle">
+            <h3>ECCV 24</h3>
+            <img class="carrot" src="./assets/carrot.png">
+        </div>
+        <h1>VEGS: View Extrapolation of Urban Scene in 3D Gaussian Splatting using Learned Priors</h1>
+
+        <div class="name-container">
+            <a class="name" data-univ="KAIST" target="_blank" href="https://deepshwang.github.io/">Sungwon Hwang*</a>
+            <a class="name" data-univ="KAIST" target="_blank" href="">Min-Jung Kim*</a>
+            <a class="name" data-univ="KAIST" target="_blank" href="https://keh0t0.github.io/">Taewoong kang</a>
+        </div>
+        <div class="name-container">
+            <a class="name" data-univ="Ghent University" target="_blank" href="">Jayeon Kang</a>
+            <a class="name" data-univ="KAIST" target="_blank" href="https://sites.google.com/site/jaegulchoo">Jaegul
+                Choo</a>
+        </div>
+        <div class="caption">(*: equal contribution)</div>
+        <div class="buttons">
+            <button class="link-btn">
+                <img class="link-logo" src="./assets/arxiv_logo.svg">
+                <span class="link-name">ArXiv</span></button>
+            <button class="link-btn">
+                <img class="link-logo" src="./assets/arxiv_logo.svg">
+                <span class="link-name">Code</span></button>
+        </div>
+        <div class="univs" style="top:0px;">
+            <span class="univ">얍</span>
+        </div>
     </section>
+
     <section class="demo">
-        <div class="video-compare-container">
-            <div class="dem-name">
-                <span class="dem-left">3DGS</span>
-                <span class="dem-right">VEGS</span>
-            </div>
-            <video loop autoplay>
-                <source src="./assets/contents/vegs_-10_0_1.mp4">
-            </video>
-            <div class="divider"></div>
-            <div class="video-clipper">
-                <video loop autoplay class="clipped-video">
-                    <source src="./assets/contents/3dgs_-10_0_1.mp4">
-                </video>
-            </div>
+        <div class="demo-container">
+            <video class="demovid" autoplay loop src="./assets/contents/final_evs_demo_v4.mp4"></video>
+            <p>Our method aligns and flattens Gaussian covariances<br /> to scene surfaces estimated from monocular
+                normal prediction network</p>
         </div>
+
+        <div class="demo-container">
+            <div class="vid-container">
+                <video class="demovid" autoplay loop src="./assets/contents/four-1_3_smalldynamic.mp4"></video>
+                <video class="demovid" autoplay loop src="./assets/contents/four-2_5.mp4"></video>
+                <video class="demovid" autoplay loop src="./assets/contents/four-3_2.mp4"></video>
+                <video class="demovid" autoplay loop src="./assets/contents/four-4_.mp4"></video>
+            </div>
+
+            <p>OOur method jointly reconstructs static scene with dynamic objects such as cars.</p>
+        </div>
+
+    </section>
+
+    <!-- <hr/> -->
+    <div class="divider">
+        <hr/>
+        <img src="./assets/carrot.png" style="width: 40px;">
+        <hr/>
         
-        <div class="video-compare-container">
-            <div class="dem-name">
-                <span class="dem-left">3DGS + LiDAR</span>
-                <span class="dem-right">VEGS</span>
-            </div>
-            <video loop autoplay>
-                <source src="./assets/contents/vegs_-10_0_1.mp4">
-            </video>
-            <div class="divider"></div>
-            <div class="video-clipper">
-                <video loop autoplay class="clipped-video">
-                    <source src="./assets/contents/lidar_-10_0_1.mp4">
-                </video>
-            </div>
-        </div>
-        <p>Our method aligns and flattens Gaussian covariances to scene surfaces estimated from monocular normal prediction
-            network</p>
-    </section>
-    <section class="fourcuts">
-        <div class="fourvids">
-            <video loop autoplay>
-                <source src="./assets/contents/four-1_3_smalldynamic.mp4">
-            </video>
-            <video loop autoplay>
-                <source src="./assets/contents/four-2_5.mp4">
-            </video>
-            <video loop autoplay>
-                <source src="./assets/contents/four-3_2.mp4">
-            </video>
-            <video loop autoplay>
-                <source src="./assets/contents/four-4_.mp4">
-            </video>
-            <p>Our method jointly reconstructs static scene with dynamic objects such as cars.</p>
-        </div>
-    </section>
+    </div>
 
 
 
