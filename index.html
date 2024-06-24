@@ -197,6 +197,20 @@
 		/* Align with the text */
 	}
 
+    .icon-button {
+		display: inline-block;
+		width: 20px;
+		/* Adjust as needed */
+		height: 20px;
+		/* Adjust as needed */
+		/* background-image: url('./assets/arxiv_logo.svg'); */
+		background-size: contain;
+		/* Ensure the SVG fits within the span */
+		background-repeat: no-repeat;
+		/* Prevent tiling */
+		vertical-align: bottom;
+		/* Align with the text */
+	}
 
 	.noto-sans-<uniquifier> {
 		font-family: "Noto Sans", sans-serif;
@@ -208,10 +222,12 @@
 	}
 
 	.link-btn{
-		background-color: #222;
-		padding: 3px 20px;
-		border-radius: 50px;
-		margin-top: 10px;
+		background-color: #3c3939;
+		padding: 7px 13px;
+		border-radius: 20px;
+		margin-top: 0px;
+        margin-left: 2px;
+        margin-right: 2px;
 		color: white;
 	}
 	.link-btn:visited{
@@ -356,17 +372,27 @@
 
 	<center>
 		<table>
-			<tr style="height: 70px;">	
-				<td align=center> <span style="font-size:18pt">
+			<tr style="height: 60px;">
+                <td align=center> <span style="font-size:12pt">
+                    <center>
+                        <a class="link-btn" href="https://arxiv.org/abs/2103.03231"> <img src="assets/pdf-logo.svg" class="icon-button" alt="icon-pdf"> &nbsp Paper</a>
+                    </center>
+            </td>
+				<td align=center> <span style="font-size:12pt">
 						<center>
-							<a class="link-btn" href="https://arxiv.org/abs/2103.03231">ArXiv</a>
+							<a class="link-btn" href="https://arxiv.org/abs/2103.03231"> <img src="assets/arxiv-logomark-small-white.svg" class="icon-button" alt="icon-arxiv"> &nbsp arXiv</a>
 						</center>
 				</td>
-				<td align=center> <span style="font-size:18pt">
+				<td align=center> <span style="font-size:12pt">
 						<center>
-							<a class="link-btn" href="https://youtu.be/u9HqKGqvJhQ?t=5843">Code</a>
+							<a class="link-btn" href="https://github.com/deepshwang/vegs"> <img src="assets/github-mark-white.svg" class="icon-button" alt="icon-github"> &nbsp Code</a>
 						</center>
 				</td>
+				<td align=center> <span style="font-size:12pt">
+                    <center>
+                        <a class="link-btn" href="https://www.cvlibs.net/datasets/kitti-360/"> <img src="assets/pics-icon.svg" class="icon-button" alt="icon-Data"> &nbsp Data (KITTI-360)</a>
+                    </center>
+            </td>
 			</tr>
 		</table>
 	</center>
